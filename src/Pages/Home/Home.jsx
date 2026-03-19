@@ -231,9 +231,10 @@ const fadeInUp = {
 };
 
 const staggerContainer = {
+  hidden: { opacity: 1, y: 50 },
   visible: { transition: { staggerChildren: 0.15 } }
 };
-
+ 
 const revealFromLeft = {
   hidden: { opacity: 0, x: -50 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } }

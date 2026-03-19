@@ -212,6 +212,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+    margin: 30px 0px;
 }
 
 .quote-icon {
@@ -293,7 +294,7 @@ body {
   background-color: #A4895D;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .profile-container {
     flex-direction: column;
     gap: 40px;
@@ -313,6 +314,7 @@ body {
     justify-content: center;
     text-align: center;
     align-items: center;
+    margin: 30px 0px;
   }
   .profile-content p{
     text-align: center;
@@ -325,7 +327,7 @@ body {
   }
 
   .saga-title {
-    font-size: 26px;
+    font-size: 38px;
   }
 
   .saga-content p {
@@ -497,6 +499,13 @@ body {
   }
   .showtime-track {
     transform: translateX(calc(var(--slide-index) * -100%)); 
+  }
+  .showtime-main-title{
+    font-size: 38px;
+    margin: 10px 0px;
+  }
+  .showtime-buttons{
+    margin: 20px 0px;
   }
 }
 
@@ -684,7 +693,7 @@ body {
 }
 
 .legacy-btn {
-  margin-top: 15px;
+  margin: 15px 0px;
 }
 
 .legacy-mobile-title {
@@ -707,7 +716,7 @@ body {
   }
   
   .ps-main-title {
-    font-size: 28px;
+    font-size: 38px;
     text-align: center;
   }
   
@@ -751,6 +760,7 @@ body {
 
   .legacy-content-row {
     flex-direction: column;
+    margin: 30px 0px;
     gap: 30px;
   }
 
@@ -766,7 +776,7 @@ body {
   .legacy-mobile-title {
     display: block; 
     text-align: center;
-    font-size: 28px;
+    font-size: 38px;
     margin-bottom: 20px;
   }
 
@@ -881,6 +891,7 @@ body {
 
 .amenity-card {
   background-color: #F5EDED;
+  margin: 0px 15px;
   padding: 40px 15px;
   display: flex;
   flex-direction: column;
@@ -999,7 +1010,8 @@ body {
 @media (max-width: 768px) {
   .ce-main-title {
     font-size: 30px;
-    margin-bottom: 25px;
+    margin: 5px 0px;
+    padding: 0px;
   }
   
   .ce-title {
@@ -1153,6 +1165,7 @@ body {
   box-sizing: border-box;
 }
 
+
 .insider-container {
   max-width: 1024px;
   margin: 0 auto;
@@ -1279,6 +1292,12 @@ body {
   .pulse-track {
     transform: translateX(calc(var(--pulse-index) * -50%)); 
   }
+  .pulse-main-title{
+    margin: 10px 0px;
+  }
+  .pulse-carousel-wrapper{
+    justify-content: center !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1298,7 +1317,7 @@ body {
     padding: 5px;
   }
   .insider-title {
-    font-size: 28px;
+    font-size: 38px;
   }
   .insider-subtitle {
     font-size: 16px;
