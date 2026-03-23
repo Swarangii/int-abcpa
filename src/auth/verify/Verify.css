@@ -8,16 +8,15 @@
   justify-content: center;
   min-height: 100vh;
   background-color: #ffffff;
-  font-family: 'Inter', sans-serif; /* Update to match your project font */
+  font-family: 'Inter', sans-serif; 
 }
 
 .verify-container {
   display: flex;
   width: 100%;
-  min-height: 100vh; /* Takes full height of screen */
+  min-height: 100vh; 
 }
 
-/* --- Left Form Section --- */
 .verify-form-section {
   flex: 1;
   display: flex;
@@ -28,7 +27,7 @@
 
 .verify-logo-wrapper {
   align-self: flex-start;
-  margin-bottom: auto; /* Pushes the form content to the center */
+  margin-bottom: auto; 
 }
 
 .verify-logo {
@@ -36,11 +35,10 @@
   height: auto;
 }
 
-/* Wraps the text and inputs to perfectly center them */
 .verify-content-wrapper {
   width: 100%;
   max-width: 400px;
-  margin: auto; /* Centers vertically and horizontally within the flex column */
+  margin: auto; 
   text-align: center;
 }
 
@@ -63,7 +61,6 @@
   margin: 0 0 30px 0;
 }
 
-/* --- OTP Input Fields --- */
 .verify-form {
   display: flex;
   flex-direction: column;
@@ -98,7 +95,6 @@
   font-size: 20px;
 }
 
-/* --- Buttons & Links --- */
 .verify-submit-btn {
   background-color: #7B1113;
   color: #ffffff;
@@ -107,12 +103,12 @@
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  width: 100%;
+  width: 100%; 
   transition: background-color 0.2s ease;
 }
 
 .verify-submit-btn:hover {
-  background-color: #630c0f; /* Slightly darker red on hover */
+  background-color: #630c0f;  
 }
 
 .verify-footer {

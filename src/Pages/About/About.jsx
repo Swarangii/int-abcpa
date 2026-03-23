@@ -61,7 +61,7 @@ const historyData = [
   {
     id: 2,
     image: historyImg2,
-    reverse: true, // This flag swaps the layout to right-aligned image
+    reverse: true, 
     paragraphs: [
       "Across decades, Indian National Theatre trained and inspired artists such as Smita Patil, Amrish Puri, Sanjeev Kumar, Sarita Joshi, Amol Palekar, Ashok Saraf, Tiku Talsania, Pravin Joshi, Swaroop Sampat, Burjor Patel, Swati Chitnis, Rohini Hattangadi, Bhakti Barve, P.L. Deshpande, Satish Dubhashi, Shriram Lagoo, Sadashiv Amrapurkar, Mohan Agashe, Atul Parchure, Shivaji Satam, Ankush Choudhari, Bharat Jadhav, Siddharth Jadhav, Sameer Chougule, Spruha Joshi, Aditi Sarangdhar, Paresh Rawal, Adwait Dadarkar, Veena Jamkar, Sukhada Ayare, Pallavi Patil, Aarti More, Rutuja Bagwe, Bhagyashree Milind, Phiroz Antia, Suhas Joshi, Atmaram Bhende, etc.",
       "Nurturing young talent was equally central to its mission. Under the steady, imaginative leadership of Vatsala Mehta, the Children's Theatre Academy staged eleven full-length children's dramas, creating a foundational training space for young performers and introducing countless children to the world of theatre. This became one of Indian National Theatre's most cherished legacies, ensuring that creativity passed organically from one generation to the next."
@@ -233,7 +233,7 @@ const About = () => {
       {/* --- The INTABCPA Era Section --- */}
       <section className="about-era-section">
         <motion.div 
-          className="about-container" // Removed about-era-content from here
+          className="about-container"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
@@ -265,7 +265,7 @@ const About = () => {
         </motion.div>
       </section>
 
-      {/* --- Looking Ahead Section (Your existing code) --- */}
+      {/* --- Looking Ahead Section --- */}
       <section className="about-future-section">
         <motion.div 
           className="about-container about-future-content"
@@ -290,7 +290,7 @@ const About = () => {
         <section className="about-vml-section">
           <motion.div 
             className="about-container about-vml-grid"
-            initial="hidden"
+            init     ial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={staggerContainer}
@@ -304,7 +304,7 @@ const About = () => {
               </p>
             </motion.div>
 
-            {/* Center: Graphic (Hidden on Mobile) */}
+            {/* (Hidden on Mobile) */}
             <motion.div className="about-vml-center-graphic" variants={fadeInUp}>
               <img src={centerLogoImg} alt="INT Aditya Birla Centre Logo" />
             </motion.div>

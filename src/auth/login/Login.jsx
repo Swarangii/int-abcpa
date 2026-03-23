@@ -49,7 +49,7 @@ const Login = () => {
           <form className="login-form" onSubmit={(e) => e.preventDefault()}>
             <motion.div className="login-input-row" variants={itemVariants}>
               <div className="login-input-group">
-                <label>First Name</label>
+                <label>Enter Email or Phone Number</label>
                 <input type="text" placeholder="Enter" required />
               </div>
             </motion.div>
@@ -63,18 +63,16 @@ const Login = () => {
             <motion.div className="login-divider" variants={itemVariants}>
               <span>OR</span>
             </motion.div>
-            <Link to="/verify">
             <motion.button 
-              type="button" 
-              className="login-google-btn"
-              variants={itemVariants}
-              whileHover={{ backgroundColor: "#f9f9f9" }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <img src={googleIcon} alt="Google" />
-              <p>Login with Google</p>
-            </motion.button>
-            </Link>
+                          type="button" 
+                          className="signup-google-btn"
+                          variants={itemVariants}
+                          whileHover={{ backgroundColor: "#f9f9f9" }}
+                          whileTap={{ scale: 0.98 }}
+                        >
+                          <Link to="/verify" className='sign-in-link'><img src={googleIcon} alt="Google"/>Sign in with Google</Link>
+                          
+                        </motion.button>
           </form>
           <motion.div className="login-footer" variants={itemVariants}>
             <p className="login-disclaimer">
