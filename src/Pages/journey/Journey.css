@@ -1,0 +1,242 @@
+/* Base styling matching the provided designs */
+.journey-section {
+  background-color: #FAF6F5; /* Light creamy pink background */
+  padding: 80px 5%;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #4A4A4A;
+  overflow: hidden;
+}
+
+.journey-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.journey-header h2 {
+  font-size: 2.5rem;
+  color: #5A5A5C;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.journey-header p {
+  font-size: 1rem;
+  color: #7A7A7A;
+}
+
+/* Timeline Core */
+.timeline-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline-center-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  border-left: 2px dashed #9E2A2B; /* Dark red dashed line */
+  z-index: 1;
+}
+
+.timeline-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  margin-bottom: 100px;
+  width: 100%;
+}
+
+.timeline-row:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-half {
+  width: 45%; /* Leaves 10% space in the middle for the line */
+  position: relative;
+}
+
+/* Timeline Dot */
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  top: 25px; /* Aligns with the year text vertically */
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  background-color: #9E2A2B;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 0 4px #FAF6F5; /* Matches background to clear line underneath */
+}
+
+/* Images */
+.timeline-img-wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+/* Text and Typography */
+.timeline-text-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-right {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.text-left {
+  text-align: left;
+  align-items: flex-start;
+}
+
+.year-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.year-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #9E2A2B;
+  line-height: 1;
+}
+
+/* The horizontal dashed lines connecting the year to the central line */
+.horizontal-dash {
+  height: 1px;
+  width: 40px;
+  border-top: 1px dashed #9E2A2B;
+}
+
+.dash-left {
+  margin-right: 16px;
+  margin-left: -55px; /* Pulls it towards the center line */
+}
+
+.dash-right {
+  margin-left: 16px;
+  margin-right: -55px; /* Pulls it towards the center line */
+}
+
+/* Content paragraphs & bullets */
+.content-bullet {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.text-right .content-bullet {
+  flex-direction: row-reverse;
+}
+
+.bullet-point {
+  min-width: 6px;
+  height: 6px;
+  background-color: #9E2A2B;
+  margin-top: 8px;
+  border-radius: 1px; /* Slight square look based on reference */
+}
+
+.text-left .bullet-point {
+  margin-right: 12px;
+}
+
+.text-right .bullet-point {
+  margin-left: 12px;
+}
+
+.text-right p {
+  text-align: right;
+}
+
+/* =========================================
+   Responsive Design (Mobile specific)
+   ========================================= */
+@media screen and (max-width: 768px) {
+  .journey-header h2 {
+    font-size: 2rem;
+  }
+  
+  /* Move line to the left */
+  .timeline-center-line {
+    left: 24px;
+    transform: none;
+  }
+
+  .timeline-row {
+    flex-direction: column !important; /* Force column layout */
+    margin-bottom: 60px;
+    padding-left: 60px; /* Space for the line on the left */
+  }
+
+  .timeline-half {
+    width: 100%;
+  }
+
+  /* Move dot to the new line position */
+  .timeline-dot {
+    left: 24px;
+    top: 25px;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Re-order elements so Year is always first, then Image, then Text */
+  .timeline-row.image-left .left-half,
+  .timeline-row.image-right .left-half {
+    order: 2; /* Image or Text block */
+  }
+
+  .timeline-row.image-left .right-half,
+  .timeline-row.image-right .right-half {
+    order: 1; /* Always push the block with the Year to the top */
+  }
+
+  /* Reset text alignments to left */
+  .timeline-text-wrapper,
+  .text-right,
+  .text-left {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .text-right p {
+    text-align: left;
+  }
+
+  /* Reset bullet layouts */
+  .text-right .content-bullet {
+    flex-direction: row;
+  }
+  
+  .text-right .bullet-point {
+    margin-left: 0;
+    margin-right: 12px;
+  }
+
+  /* Adjust year container and remove horizontal dashes */
+  .year-container {
+    margin-bottom: 16px;
+  }
+
+  .horizontal-dash {
+    display: none; /* Hide connecting horizontal lines on mobile */
+  }
+
+  /* Space between image and text on mobile */
+  .timeline-img-wrapper {
+    margin: 16px 0;
+  }
+}

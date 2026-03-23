@@ -132,17 +132,16 @@
   opacity: 0.8;
 }
 
-/* --- Right Image Section --- */
 .verify-image-section {
   flex: 1;
-  background-color: #F8F4F4; /* Light pinkish/beige background */
+  background-color: #F8F4F4; 
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .verify-cover-logo {
-  max-width: 350px; /* Size of the large centered logo */
+  max-width: 350px; 
   opacity: 0.9;
 }
 
@@ -161,19 +160,18 @@
     flex-direction: column;
   }
 
-  /* Hide the right graphic pane entirely on smaller screens */
   .verify-image-section {
     display: none;
   }
 
   .verify-form-section {
     padding: 30px;
-    align-items: center; /* Ensures the logo centers on mobile if desired */
+    align-items: center; 
   }
 
   .verify-logo-wrapper {
-    margin-bottom: 40px; /* Space between logo and form on mobile */
-    align-self: center; /* Centers the logo at the top on mobile */
+    margin-bottom: 40px; 
+    align-self: center; 
   }
 }
 

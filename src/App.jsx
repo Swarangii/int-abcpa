@@ -7,6 +7,8 @@ import Login from "./auth/login/Login";
 import Verify from "./auth/verify/Verify";
 import Profile from "./profile/userProfile/profile"
 import Bookings from "./profile/bookings/Bookings";
+import Journey from "./Pages/journey/Journey";
+import NotFound from "./Pages/not-found/NotFound";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
       <Route path="/verify" element={<Verify />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/bookings" element={<Bookings />} />
+      <Route path="/journey" element={<Journey />} />
+      <Route path="/notfound" element={<NotFound />} />
       </Route>
 
       {/* Pages WITHOUT Navbar + Footer */}
