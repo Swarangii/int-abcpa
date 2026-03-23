@@ -35,11 +35,11 @@ const Signup = () => {
           animate="visible"
         >
 
-          <motion.div className="signup-logo-wrapper" variants={itemVariants}>
+          {/* <motion.div className="signup-logo-wrapper" variants={itemVariants}>
             <Link to="/">
                         <img src={logoImg} alt="INT Aditya Birla Centre Logo" className="login-logo" />
             </Link>
-          </motion.div>
+          </motion.div> */}
 
 
           <motion.div variants={itemVariants}>
@@ -110,8 +110,8 @@ const Signup = () => {
               whileHover={{ backgroundColor: "#f9f9f9" }}
               whileTap={{ scale: 0.98 }}
             >
-              <img src={googleIcon} alt="Google" />
-              Sign in with Google
+              <Link to="/verify" className='sign-in-link'><img src={googleIcon} alt="Google"/>Sign in with Google</Link>
+              
             </motion.button>
           </form>
 

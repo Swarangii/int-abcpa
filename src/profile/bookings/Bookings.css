@@ -1,0 +1,185 @@
+/* Bookings.css */
+
+.bookings-section {
+  width: 100%;
+}
+
+.bookings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Card Base Styles */
+.booking-card {
+  display: flex;
+  flex-direction: column; /* Stack vertically on mobile */
+  background: #FFFFFF;
+  border: 1px solid #E9ECEF;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.booking-card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #7D0B15;
+
+}
+
+/* Image Styles */
+.booking-image-wrapper {
+  width: 100%;
+  height: 200px;
+  flex-shrink: 0;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.booking-image {
+  width: 100%;
+  /* height: 100%;
+  object-fit: cover;
+  border-radius: 4px; */
+}
+
+/* Details Section */
+.booking-details {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.booking-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #333333;
+}
+
+.booking-screen {
+  font-size: 0.8rem;
+  color: #6C757D;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.m-ticket-badge {
+  font-size: 0.75rem;
+  color: #495057;
+  font-weight: 500;
+}
+
+.booking-datetime {
+  color: #8B151A;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.booking-venue {
+  color: #6C757D;
+  font-size: 0.8rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Seat Information */
+.seat-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+  color: #495057;
+}
+
+.seat-icon {
+  color: #D4AF37; /* Gold-ish color matching the icon in design */
+}
+
+.seat-class {
+  color: #A07F43; /* Match the premium text color */
+  font-weight: 500;
+}
+
+.seat-numbers {
+  color: #6C757D;
+}
+
+/* Pricing Section */
+.pricing-section {
+  margin-top: auto; /* Pushes pricing to the bottom of the card */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 0.85rem;
+  color: #495057;
+}
+
+.price-label {
+  font-weight: 500;
+}
+
+.tax-note {
+  display: block;
+  font-size: 0.7rem;
+  color: #ADB5BD;
+  margin-top: 0.1rem;
+}
+
+.price-divider {
+  height: 1px;
+  background-color: #E9ECEF;
+  margin: 0.5rem 0;
+}
+
+.total-row {
+  font-weight: 600;
+  color: #212529;
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   Tablet & Desktop Media Queries
+   ========================================= */
+@media (min-width: 768px) {
+  .booking-card {
+    flex-direction: row; /* Side-by-side layout on desktop */
+    align-items: stretch;
+  }
+
+  .booking-image-wrapper {
+    width: 300px; /* Fixed width for image on desktop */
+    height: auto; /* Let it fill the height naturally based on content next to it */
+    padding: 1.5rem;
+  }
+
+  .booking-details {
+    padding: 1.5rem 1.5rem 1.5rem 0;
+    /* margin-top: 100px; */
+  }
+}
+
+@media (min-width: 1024px) {
+  .booking-image-wrapper {
+    width: 350px;
+  }
+  .booking-image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}

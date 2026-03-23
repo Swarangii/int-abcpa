@@ -1,0 +1,240 @@
+/* Address.css */
+
+.address-section {
+  width: 100%;
+}
+
+.m-0 {
+  margin: 0 !important;
+}
+
+/* Address Grid */
+.address-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Stack on mobile */
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+/* Address Cards */
+.address-card {
+  padding: 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease-in-out;
+}
+
+.active-card {
+  background-color: #FDF4F4; /* Light red tint */
+}
+
+.inactive-card {
+  background-color: #F8F9FA; /* Light gray tint */
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.address-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #8B151A;
+}
+
+.address-details {
+  font-size: 0.85rem;
+  color: #495057;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.address-contact {
+  font-size: 0.85rem;
+  color: #495057;
+  margin-bottom: 1.5rem;
+}
+
+/* Buttons inside Card */
+.card-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.btn-edit, .btn-remove {
+  padding: 0.4rem 1.2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-edit {
+  background-color: #8B151A;
+  color: white;
+  border: 1px solid #8B151A;
+}
+.btn-edit:hover { background-color: #6A0F13; }
+
+.btn-remove {
+  background-color: transparent;
+  color: #8B151A;
+  border: 1px solid #8B151A;
+}
+.btn-remove:hover { background-color: #FDF4F4; }
+
+/* Custom Radio Buttons */
+.custom-radio {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.custom-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.radio-mark {
+  height: 18px;
+  width: 18px;
+  background-color: transparent;
+  border: 1px solid #6C757D;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.custom-radio:hover input ~ .radio-mark {
+  border-color: #8B151A;
+}
+
+.custom-radio input:checked ~ .radio-mark {
+  border-color: #8B151A;
+}
+
+.radio-mark:after {
+  content: "";
+  display: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #8B151A;
+}
+
+.custom-radio input:checked ~ .radio-mark:after {
+  display: block;
+}
+
+/* Add New Address Section */
+.add-new-section {
+  border-top: 1px solid #E9ECEF;
+  padding-top: 2rem;
+}
+
+.add-address-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  color: #8B151A;
+}
+
+.add-icon {
+  fill: #8B151A;
+  color: white; /* Inverts the plus to white inside the red circle */
+}
+
+/* Form Styles */
+.address-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.row-group {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 1.5rem !important;
+}
+
+.type-label {
+  font-size: 0.85rem;
+  color: #212529;
+  font-weight: 500;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.type-radio .radio-label {
+  margin-left: 0.5rem;
+  font-size: 0.85rem;
+  color: #212529;
+}
+
+/* 3-Column Layout */
+.form-row-3 {
+  display: grid;
+  grid-template-columns: 1fr; /* Stack on mobile */
+  gap: 1.5rem;
+}
+
+/* Reusing some input styles defined in previous files, but adding them here for safety if you keep CSS scoped */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  color: #6C757D;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #E9ECEF;
+  background-color: #FFFFFF;
+  color: #212529;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: #8B151A;
+}
+
+/* =========================================
+   Tablet & Desktop Media Queries
+   ========================================= */
+@media (min-width: 768px) {
+  .address-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on desktop */
+  }
+
+  .form-row-3 {
+    grid-template-columns: repeat(3, 1fr); /* Three columns for city/pincode/phone */
+  }
+}

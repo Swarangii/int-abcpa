@@ -18,6 +18,7 @@ import iconSeamlessness from "../../../public/assets/seamlessnessIcon.svg";
 import iconSpeed from "../../../public/assets/speedIcon.svg";
 import centerLogoImg from "../../../public/assets/logo.svg";
 import auditoriumImg from "../../../public/assets/auditoriumImg.png"
+import breadcrumbIcon from "../../../public/assets/breadcrumbIcon.svg"
 // Reusable animation variants matching your project style
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -113,7 +114,7 @@ const About = () => {
         <div className="about-hero-image-container">
             <img src={maskHeroImg} alt="Theatre Masks" className="about-hero-img" />
             <div className="about-breadcrumbs">
-                <span>HOME</span> &bull; <span>ABOUT</span>
+                <span>HOME</span> <img src={breadcrumbIcon} alt="" /> <span>ABOUT</span>
             </div>
         </div>
       </section>
@@ -276,10 +277,10 @@ const About = () => {
           <motion.h2 className="about-section-title centered" variants={fadeInUp}>
             Looking Ahead
           </motion.h2>
-          <motion.p variants={fadeInUp}>
+          <motion.p variants={fadeInUp} className='looking-ahead-text'>
             Today, this rich legacy continues at INT Aditya Birla Centre for Performing Arts, where tradition meets innovation, and India's artistic heritage is reimagined for the future. Its vision is to be a global destination for the performing arts, where Indian creativity engages the world with confidence and grace.
           </motion.p>
-          <motion.p variants={fadeInUp}>
+          <motion.p variants={fadeInUp} className='looking-ahead-text'>
             The Centre remains a home where creators rehearse ideas, audiences discover new worlds, and the timeless vision lives on resonant, inclusive and ever-evolving.
           </motion.p>
         </motion.div>

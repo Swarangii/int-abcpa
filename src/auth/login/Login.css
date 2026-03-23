@@ -171,6 +171,7 @@
   color: #545454;
   cursor: pointer;
   width: 100%;
+  text-decoration: none;
 }
 
 .login-google-btn img {
@@ -178,6 +179,10 @@
   height: 20px;
 }
 
+.login-google-btn p{
+  text-decoration: none;
+  color: #545454;
+}
 
 .login-footer {
   margin-top: 10px;

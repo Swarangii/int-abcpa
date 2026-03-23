@@ -1,0 +1,202 @@
+/* =========================================================
+   VERIFY EMAIL PAGE STYLES
+   ========================================================= */
+
+.verify-page-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #ffffff;
+  font-family: 'Inter', sans-serif; /* Update to match your project font */
+}
+
+.verify-container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh; /* Takes full height of screen */
+}
+
+/* --- Left Form Section --- */
+.verify-form-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 80px;
+  position: relative;
+}
+
+.verify-logo-wrapper {
+  align-self: flex-start;
+  margin-bottom: auto; /* Pushes the form content to the center */
+}
+
+.verify-logo {
+  max-width: 150px;
+  height: auto;
+}
+
+/* Wraps the text and inputs to perfectly center them */
+.verify-content-wrapper {
+  width: 100%;
+  max-width: 400px;
+  margin: auto; /* Centers vertically and horizontally within the flex column */
+  text-align: center;
+}
+
+.verify-title {
+  font-size: 42px;
+  font-weight: 600;
+  color: #545454;
+  margin: 0 0 15px 0;
+}
+
+.verify-subtitle {
+  font-size: 14px;
+  color: #777;
+  margin: 0 0 10px 0;
+}
+
+.verify-email-display {
+  font-size: 18px;
+  color: #545454;
+  margin: 0 0 30px 0;
+}
+
+/* --- OTP Input Fields --- */
+.verify-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.verify-otp-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.verify-otp-input {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #E0E0E0;
+  text-align: center;
+  font-size: 24px;
+  color: #545454;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.verify-otp-input:focus {
+  border-color: #7B1113;
+  box-shadow: 0 0 0 3px rgba(123, 17, 19, 0.1);
+}
+
+.verify-otp-input::placeholder {
+  color: #999;
+  font-size: 20px;
+}
+
+/* --- Buttons & Links --- */
+.verify-submit-btn {
+  background-color: #7B1113;
+  color: #ffffff;
+  border: none;
+  padding: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s ease;
+}
+
+.verify-submit-btn:hover {
+  background-color: #630c0f; /* Slightly darker red on hover */
+}
+
+.verify-footer {
+  margin-top: 25px;
+}
+
+.verify-footer p {
+  font-size: 13px;
+  color: #777;
+}
+
+.verify-resend-link {
+  color: #7B1113;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+  margin-left: 5px;
+}
+
+.verify-resend-link:hover {
+  opacity: 0.8;
+}
+
+/* --- Right Image Section --- */
+.verify-image-section {
+  flex: 1;
+  background-color: #F8F4F4; /* Light pinkish/beige background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verify-cover-logo {
+  max-width: 350px; /* Size of the large centered logo */
+  opacity: 0.9;
+}
+
+/* =========================================================
+   MEDIA QUERIES (RESPONSIVENESS)
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .verify-form-section {
+    padding: 40px 40px;
+  }
+}
+
+@media (max-width: 850px) {
+  .verify-container {
+    flex-direction: column;
+  }
+
+  /* Hide the right graphic pane entirely on smaller screens */
+  .verify-image-section {
+    display: none;
+  }
+
+  .verify-form-section {
+    padding: 30px;
+    align-items: center; /* Ensures the logo centers on mobile if desired */
+  }
+
+  .verify-logo-wrapper {
+    margin-bottom: 40px; /* Space between logo and form on mobile */
+    align-self: center; /* Centers the logo at the top on mobile */
+  }
+}
+
+@media (max-width: 500px) {
+  .verify-form-section {
+    padding: 20px 15px;
+  }
+
+  .verify-title {
+    font-size: 34px;
+  }
+
+  .verify-email-display {
+    font-size: 16px;
+  }
+
+  .verify-otp-input {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+}

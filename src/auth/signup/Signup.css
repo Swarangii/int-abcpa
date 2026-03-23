@@ -193,8 +193,13 @@
 .signup-google-btn img {
   width: 20px;
   height: 20px;
+  margin: 0px 10px 0px ;
 }
-
+.sign-in-link{
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: #545454;
+}
 .signup-footer {
   margin-top: 10px;
   text-align: left;

@@ -8,7 +8,7 @@
 .about-container {
   /* max-width: 1200px; */
   margin: 0 100px;
-  padding: 0 20px;
+  padding: 0 auto;
 }
 
 /* 1. Hero Section */
@@ -37,7 +37,7 @@
   top: 30px;
   left: 40px;
   color: #fff;
-  font-size: 0.75rem;
+  font-size: 9px;
   letter-spacing: 2px;
   text-transform: uppercase;
   z-index: 10;
@@ -132,7 +132,7 @@
 .about-stat-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
 }
 
 .about-stat-number {
@@ -140,14 +140,16 @@
   font-weight: 400;
   color: #7B1113;
   margin: 0 0 10px 0;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .about-stat-label {
-  text-align: left;
-  align-items: center;
+  text-align:left;
+  align-items:flex-start;
   justify-content: left;
-  font-size: 0.9rem;
-  color: #777;
+  font-size: 14px;
+  color: #545454;
   margin: 0;
 }
 
@@ -172,8 +174,11 @@
     font-size: 2.8rem;
   }
   
-  .about-stats-grid {
+  /* .about-stats-grid {
     grid-template-columns: 1fr;
+  } */
+  .about-container{
+    margin: 0 auto;
   }
 }
 
@@ -367,7 +372,7 @@ p {
 
 .about-future-content {
   /* max-width: 900px; */
-  margin: 0px 100px;
+  margin: 0px 80px;
   text-align: center;
 }
 
@@ -515,22 +520,35 @@ p {
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
   }
+  .looking-ahead-text{
+    margin: 0px 40px;
+  }
 }
 
 @media (max-width: 1068px) {
   .about-section-title {
     font-size: 48px;
   }
-
+  .about-stats-heading{
+    text-align: left;
+  }
   /* Vision/Mission Section Mobile Stack */
   .about-vml-grid {
     flex-direction: column;
     text-align: center;
+    gap: 2px;
   }
-
+  .about-vml-title{
+    margin: auto;
+    font-weight: 38px;
+  }
   .about-vml-block {
     align-items: center;
-    margin-bottom: 30px;
+    margin: 30px 20px;
+    padding: auto 20px;
+  }
+  .about-vml-section{
+    padding: 0px;
   }
 
   /* HIDE THE CENTER GRAPHIC ON MOBILE (Matches reference image) */

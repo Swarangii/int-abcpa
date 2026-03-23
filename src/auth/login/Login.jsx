@@ -34,11 +34,11 @@ const Login = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.div className="login-logo-wrapper" variants={itemVariants}>
+          {/* <motion.div className="login-logo-wrapper" variants={itemVariants}>
             <Link to="/">
             <img src={logoImg} alt="INT Aditya Birla Centre Logo" className="login-logo" />
             </Link>
-          </motion.div>
+          </motion.div> */}
           <motion.div variants={itemVariants}>
             <h1 className="login-title">Login Account</h1>
             <p className="login-subtitle">
@@ -63,6 +63,7 @@ const Login = () => {
             <motion.div className="login-divider" variants={itemVariants}>
               <span>OR</span>
             </motion.div>
+            <Link to="/verify">
             <motion.button 
               type="button" 
               className="login-google-btn"
@@ -71,8 +72,9 @@ const Login = () => {
               whileTap={{ scale: 0.98 }}
             >
               <img src={googleIcon} alt="Google" />
-              Login with Google
+              <p>Login with Google</p>
             </motion.button>
+            </Link>
           </form>
           <motion.div className="login-footer" variants={itemVariants}>
             <p className="login-disclaimer">
