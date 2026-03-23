@@ -43,7 +43,7 @@
 }
 
 .verify-title {
-  font-size: 42px;
+  font-size: 48px;
   font-weight: 600;
   color: #545454;
   margin: 0 0 15px 0;
@@ -51,12 +51,12 @@
 
 .verify-subtitle {
   font-size: 14px;
-  color: #777;
+  color: #545454;
   margin: 0 0 10px 0;
 }
 
 .verify-email-display {
-  font-size: 18px;
+  font-size: 24px;
   color: #545454;
   margin: 0 0 30px 0;
 }
@@ -91,7 +91,7 @@
 }
 
 .verify-otp-input::placeholder {
-  color: #999;
+  color: #545454;
   font-size: 20px;
 }
 
@@ -104,20 +104,16 @@
   font-weight: 600;
   cursor: pointer;
   width: 100%; 
-  transition: background-color 0.2s ease;
 }
 
-.verify-submit-btn:hover {
-  background-color: #630c0f;  
-}
 
 .verify-footer {
   margin-top: 25px;
 }
 
 .verify-footer p {
-  font-size: 13px;
-  color: #777;
+  font-size: 12px;
+  color: #545454;
 }
 
 .verify-resend-link {
@@ -138,16 +134,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 3rem;
 }
 
 .verify-cover-logo {
-  max-width: 350px; 
+  max-width: 370px; 
   opacity: 0.9;
 }
-
-/* =========================================================
-   MEDIA QUERIES (RESPONSIVENESS)
-   ========================================================= */
 
 @media (max-width: 1024px) {
   .verify-form-section {
@@ -181,7 +174,7 @@
   }
 
   .verify-title {
-    font-size: 34px;
+    font-size: 38px;
   }
 
   .verify-email-display {
