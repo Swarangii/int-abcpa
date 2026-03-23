@@ -78,11 +78,11 @@ const Footer = () => {
         <div className="footer-col footer-social-col">
           <h4 className="social-title">FOLLOW US</h4>
           <div className="social-icons">
-            <a href="#facebook" aria-label="Facebook"><img src={facebook} alt="" /></a>
-            <a href="#instagram" aria-label="Instagram"><img src={instagram} alt="" /></a>
+            <a href="https://www.facebook.com/INTABCPA" aria-label="Facebook" ><img src={facebook} alt="" /></a>
+            <a href="https://www.instagram.com/intabcpa" aria-label="Instagram"><img src={instagram} alt="" /></a>
             <a href="#youtube" aria-label="YouTube"><img src={youtube} alt="" /></a>
             <a href="#linkedin" aria-label="LinkedIn"><img src={linkedin} alt="" /></a>
-            <a href="#x" aria-label="X"><img src={twitter} alt="" /></a>
+            <a href="https://x.com/INTABCPA" aria-label="X"><img src={twitter} alt="" /></a>
           </div>
         </div>
 
