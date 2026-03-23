@@ -13,7 +13,6 @@
   font-family: "Oxygen", sans-serif;
 }
 
-/* Left Section */
 .navbar-left {
   display: flex;
   align-items: center;
@@ -25,7 +24,6 @@
   gap: 0;
 }
 
-/* Center Section */
 .navbar-center {
   position: absolute;
   left: 50%;
@@ -39,8 +37,6 @@
   height: 75px;
   object-fit: contain;
 }
-
-/* Right Section */
 .navbar-right {
   display: flex;
   align-items: center;
@@ -49,7 +45,7 @@
   flex: 1;
 }
 
-/* Links */
+
 .nav-link {
   text-decoration: none;
   color: #545454;
@@ -63,11 +59,8 @@
   font-family: "Oxygen", sans-serif;
 }
 
-/* .nav-link:hover {
-  color: #7D0B15;
-} */
 
-/* Buttons */
+
 .nav-btn-book {
   background-color: #7D0B15;
   color: #ffffff;
@@ -105,9 +98,6 @@
   transform: scale(1.1);
 }
 
-/* ========================================= */
-/* --- MOBILE SPECIFIC CLASSES --- */
-/* ========================================= */
 
 .mobile-menu-btn {
   display: flex;
@@ -124,8 +114,6 @@
   align-items: center;
   gap: 16px;
 }
-
-/* Media Queries just for resizing constraints, not for hiding/showing */
 @media screen and (max-width: 1024px) {
   .navbar-container.mobile-padding {
     padding: 0 20px;
@@ -160,13 +148,10 @@
   }
 }
 
-/* ========================================= */
-/* --- MOBILE DROPDOWN STYLES --- */
-/* ========================================= */
 
 .mobile-dropdown {
   position: absolute;
-  top: 100%; /* Pushes it exactly below the navbar */
+  top: 100%; 
   left: 0;
   width: 100%;
   background-color: #ffffff;
@@ -174,26 +159,24 @@
   flex-direction: column;
   padding: 10px 40px 30px; 
   box-sizing: border-box;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); 
   z-index: 999;
   border-top: 1px solid #f0f0f0;
 }
 
-/* Modifying the base nav-link for mobile behavior */
 .nav-link.mobile-link {
   padding: 16px 0;
   border-bottom: 1px solid #f4f4f4;
-  justify-content: space-between; /* Pushes the chevron to the far right */
+  justify-content: space-between;
   width: 100%;
-  font-size: 14px; /* Slightly larger tap target for mobile */
+  font-size: 14px; 
 }
 
 .nav-link.mobile-link:last-child {
   border-bottom: none;
 }
 
-/* Update padding for smaller devices to match the main navbar */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1144px) {
   .mobile-dropdown {
     padding: 10px 20px 20px;
   }

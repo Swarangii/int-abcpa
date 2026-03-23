@@ -24,14 +24,12 @@ const HamburgerIcon = () => (
 );
 
 const Navbar = () => {
-  // State to track if the screen is mobile/tablet size (1024px or less)
   const [isMobile, setIsMobile] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   useEffect(() => {
     const handleResize = () => {
-      const mobileView = window.innerWidth <= 1024;
+      const mobileView = window.innerWidth <= 1144;
       setIsMobile(mobileView);
-      // Auto-close menu if resizing back to desktop
       if (!mobileView) setIsMenuOpen(false); 
     };
     handleResize();
@@ -39,12 +37,10 @@ const Navbar = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // CONDITION 1: MOBILE VIEW
   if (isMobile) {
     return (
       <nav className="navbar-container mobile-padding">
         <div className="navbar-left no-gap">
-          {/* NEW: Toggle state on click */}
           <button 
             className="mobile-menu-btn" 
             aria-label="Menu"
@@ -65,8 +61,6 @@ const Navbar = () => {
         <div className="navbar-right">
           <button className="nav-btn-book mobile-btn-book">BOOK NOW</button>
         </div>
-
-        {/* NEW: Dropdown Menu */}
         {isMenuOpen && (
           <div className="mobile-dropdown">
             <Link to="/" className="nav-link mobile-link" onClick={() => setIsMenuOpen(false)}>HOME</Link>
@@ -81,8 +75,6 @@ const Navbar = () => {
       </nav>
     );
   }
-
-  // CONDITION 2: DESKTOP VIEW
   return (
     <nav className="navbar-container">
       <div className="navbar-left">

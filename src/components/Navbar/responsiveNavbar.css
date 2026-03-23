@@ -1,29 +1,21 @@
-/* ========================================= */
-/* --- RESPONSIVE STYLES (TABLET & MOBILE) --- */
-/* ========================================= */
 
-/* 1. Hide mobile-specific elements on Desktop by default */
 .mobile-menu-btn,
 .mobile-actions {
   display: none;
 }
 
-/* 2. Media Query for Tablets and Mobile (1024px and below) */
-@media screen and (max-width: 1024px) {
-  
-  /* Shrink padding slightly for smaller screens */
+@media screen and (max-width: 1144px) {
+
   .navbar-container {
     padding: 0 20px;
     height: 80px; 
   }
 
-  /* Hide the text links and right-side icons to match your image */
   .desktop-only-links,
   .desktop-actions {
     display: none !important;
   }
 
-  /* Reveal the Hamburger icon */
   .mobile-menu-btn {
     display: flex;
     align-items: center;
@@ -34,31 +26,27 @@
     margin-right: 20px;
   }
 
-  /* Reveal the Search and User icons on the left side */
   .mobile-actions {
     display: flex;
     align-items: center;
     gap: 16px;
   }
 
-  /* Remove default flex gap on the left container so we can control it via margins */
   .navbar-left {
     gap: 0;
   }
 
-  /* Scale the logo down slightly to fit smaller screens better */
   .navbar-logo {
     height: 50px; 
   }
 
-  /* Optionally, shrink the Book Now button slightly so it doesn't overflow on small phones */
   .nav-btn-book {
     padding: 10px 18px;
     font-size: 12px;
   }
 }
 
-/* 3. Media Query for very small mobile phones (480px and below) */
+
 @media screen and (max-width: 480px) {
   .navbar-container {
     padding: 0 12px;
