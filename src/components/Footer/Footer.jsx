@@ -4,11 +4,11 @@ import logo from "../../../public/assets/logo.svg";
 import location from "../../../public/assets/location_on.svg";
 import phone from "../../../public/assets/call.svg";
 import mail from "../../../public/assets/mark_email_unread.svg";
-import facebook from "../../../public/assets/Facebook.png";
-import instagram from "../../../public/assets/Instagram.png";
-import youtube from "../../../public/assets/Youtube.png";
-import linkedin from "../../../public/assets/Linkedin.png";
-import twitter from "../../../public/assets/XTwitter.png";
+import facebook from "../../../public/assets/Facebook.svg";
+import instagram from "../../../public/assets/Instagram.svg";
+import youtube from "../../../public/assets/Youtube.svg";
+import linkedin from "../../../public/assets/Linkedin.svg";
+import twitter from "../../../public/assets/XTwitter.svg";
 
 // const IconFacebook = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>;
 // const IconInstagram = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>;
