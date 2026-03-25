@@ -55,7 +55,9 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-center">
-          <img src={logo} alt="Aditya Birla Centre For Performing Arts" className="navbar-logo mobile-logo" />
+          <Link to="/">
+        <img src={logo} alt="Aditya Birla Centre For Performing Arts" className="navbar-logo" />
+        </Link>
         </div>
 
         <div className="navbar-right">
@@ -86,7 +88,9 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-center">
+        <Link to="/">
         <img src={logo} alt="Aditya Birla Centre For Performing Arts" className="navbar-logo" />
+        </Link>
       </div>
 
       <div className="navbar-right">

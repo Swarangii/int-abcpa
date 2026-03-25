@@ -231,7 +231,6 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  font-family: sans-serif; 
   max-width: 300px;
 }
 
@@ -239,7 +238,6 @@
 .signup-input-group {
   display: flex;
   flex-direction: column;
-  font-family: 'Inter', 'Segoe UI', sans-serif;
   width: 320px;
 }
 
