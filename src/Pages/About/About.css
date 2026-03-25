@@ -1,7 +1,6 @@
 /* Base Container Styles */
 .about-page-wrapper {
-  font-family: 'Inter', sans-serif; /* Adjust to your project's global font */
-  color: #333;
+  color: #545454;
   width: 100%;
 }
 
@@ -14,21 +13,20 @@
 /* 1. Hero Section */
 .about-hero-section {
   width: 100%;
-  position: relative;
-  background-color: #1a1a1a; /* Fallback */
+  position: block;
 }
 
 .about-hero-image-container {
   position: relative;
   width: 100%;
-  height: 400px; /* Adjust based on your asset's aspect ratio */
+  height: 400px; 
   overflow: hidden;
 }
 
 .about-hero-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit:cover;
   object-position: center;
 }
 
@@ -62,15 +60,16 @@
 .about-main-heading {
   text-align: center;
   font-size: 48px;
-  font-weight: 600;
+  font-weight: 700;
   color: #545454;
+  margin: 44px 0px;
 }
 
 .about-legacy-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .about-legacy-text-col p {
@@ -110,14 +109,14 @@
 
 /* 3. Statistics Section */
 .about-statistics-section {
-  padding: 0px 0 100px;
+  padding: 0px ;
   background-color: #ffffff;
 }
 
 .about-stats-heading {
   text-align: center;
   font-size: 48px;
-  font-weight: 600;
+  font-weight: 700;
   color: #555;
   margin-bottom: 50px;
 }
@@ -126,7 +125,8 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   text-align: center;
-  gap: 30px;
+  gap: 112px;
+  width :100%;
 }
 
 .about-stat-card {
@@ -136,7 +136,7 @@
 }
 
 .about-stat-number {
-  font-size: 3.5rem;
+  font-size: 48px;
   font-weight: 400;
   color: #7B1113;
   margin: 0 0 10px 0;
@@ -157,29 +157,51 @@
 @media (max-width: 992px) {
   .about-legacy-grid {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
   
   .about-stats-grid {
+    margin-left: 10px;
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 50px;
+    row-gap: 15px;
+    gap: 0px;
   }
 }
+@media (max-width: 992px) {
+  .about-legacy-grid {
+    grid-template-columns: 1fr;
+  }
 
+  .about-legacy-image-col {
+    order: -1; /* ✅ image upar aa jayegi */
+  }
+
+  .about-legacy-text-col {
+    order: 2;
+  }
+  .about-hero-img{
+    object-fit:none;
+  }
+}
 @media (max-width: 576px) {
   .about-main-heading {
-    font-size: 2rem;
+    font-size: 38px;
+    margin: 20px 0px;
   }
   
-  .about-stat-number {
-    font-size: 2.8rem;
+  .about-statistics-section{
+    padding: 0px;
   }
-  
-  /* .about-stats-grid {
-    grid-template-columns: 1fr;
-  } */
-  .about-container{
-    margin: 0 auto;
+  .about-legacy-text-col{
+    margin: 20px 0px 0px 0px;
   }
+  .about-hero-img{
+    object-fit:none;
+  }
+  .about-hero-section {
+  width: 100%;
+  /* position: block; */
+}
 }
 
 
@@ -196,7 +218,7 @@
   display: flex;
   align-items: center; /* Aligns image and text vertically */
   gap: 60px;
-  margin-bottom: 80px;
+  margin-bottom: 30px;
 }
 
 /* This simple class handles the "zig-zag" alternating layout on desktop */
@@ -254,7 +276,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 30px;
-    margin-bottom: 60px;
+    /* margin-bottom: 60px; */
   }
 
   .about-history-img-col {
@@ -273,7 +295,7 @@
 /* Typography Utils */
 .about-section-title {
   font-size: 48px;
-  font-weight: 600;
+  font-weight: 700;
   color: #545454;
   margin-bottom: 30px;
 }
@@ -320,7 +342,7 @@
 /* Wrapper to hold the background color */
 .about-era-section {
   background-color: #F5EDED;
-  padding: 60px 20px 0px 20px;
+  padding: 60px 0px 0px 0px;
 }
 
 
@@ -329,7 +351,7 @@
   font-size: 48px;
   color: #545454;
   margin-bottom: 30px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .about-section-title.centered {
@@ -337,7 +359,7 @@
 }
 
 p {
-  font-size: 1rem;
+  font-size: 14px;
   line-height: 1.8;
   color: #545454;
   margin-bottom: 20px;
@@ -346,22 +368,30 @@ p {
 
 .about-era-content {
   display: flex;
-  align-items: center; /* Aligns text and image vertically */
-  gap: 50px; /* Space between text and image */
+  align-items: flex-start;
+  gap: 50px;
 }
 
 .era-text-column {
-  flex: 1; /* Takes up 50% width */
+  flex: 1; 
 }
 
 .era-image-column {
-  flex: 1; /* Takes up 50% width */
+  flex: 1; 
 }
-
+.era-text-column,
+.era-image-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* ✅ content top se start */
+}
 .era-image {
+  max-width: 615px;
   width: 100%;
+  max-height: 460px;
   height: auto;
   display: block;
+  margin-top: 30px;
 }
 
 /* --- Bottom Section: Looking Ahead --- */
@@ -383,19 +413,23 @@ p {
 
 @media (max-width: 1024px) {
   .about-era-content {
-    flex-direction: column; /* Stacks text on top of image */
-    text-align: center; /* Centers text for mobile as seen in screenshot */
-    gap: 30px;
+    flex-direction: column; 
+    text-align: center; 
+    align-items: center;
+    gap: 5px;
   }
-
+  
   .about-section-title {
-    font-size: 2rem;
+    font-size: 38px;
     text-align: center;
   }
 
   .era-image-column {
     width: 100%;
-    order: 2; /* Ensures image stays below text */
+    order: 2;
+  }
+  .era-text-column, .era-image-column{
+    align-items: center;
   }
 }
 /* 6. Vision & Mission Section */
@@ -444,7 +478,7 @@ p {
 
 .about-vml-title {
   font-size: 48px;
-  font-weight: 600;
+  font-weight: 700;
   color: #545454;
   margin: 15px 0px;
 }
@@ -461,8 +495,8 @@ p {
 }
 
 .about-values-header {
-  max-width: 1000px;
-  margin: 0 auto 50px auto;
+  /* max-width: 1000px; */
+  margin: 39px auto 50px auto;
   text-align: center;
 }
 
@@ -475,20 +509,19 @@ p {
 .about-values-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
+  gap: 11px;
 }
 
 .about-value-card {
   background-color: #F4EBEB; /* Matches the soft reddish tint from the design */
   padding: 40px 20px;
-  border-radius: 6px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  /* transition: background-color 0.3s ease; */
 }
 
 .about-value-icon {
@@ -499,7 +532,7 @@ p {
 
 .about-value-title {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 700;
   color: #7B1113;
   margin: 0;
 }
@@ -509,30 +542,31 @@ p {
    ========================================================= */
 
 @media (max-width: 992px) {
-  /* Era Section */
   .about-era-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
   
-  /* Values */
   .about-values-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
   }
   .looking-ahead-text{
-    margin: 0px 40px;
+    margin: 0px 0px;
+  }
+  .about-container{
+    margin: 0 20px;
+  }
+  .era-image{
+    margin: 0px;
   }
 }
 
 @media (max-width: 1068px) {
-  .about-section-title {
-    font-size: 48px;
-  }
   .about-stats-heading{
     text-align: left;
+    font-size: 38px;
   }
-  /* Vision/Mission Section Mobile Stack */
   .about-vml-grid {
     flex-direction: column;
     text-align: center;
@@ -540,23 +574,21 @@ p {
   }
   .about-vml-title{
     margin: auto;
-    font-weight: 38px;
+    font-size: 38px;
   }
   .about-vml-block {
     align-items: center;
-    margin: 30px 20px;
+    margin: 40px 10px 0px 10px;
     padding: auto 20px;
   }
   .about-vml-section{
     padding: 0px;
   }
 
-  /* HIDE THE CENTER GRAPHIC ON MOBILE (Matches reference image) */
   .about-vml-center-graphic {
     display: none;
   }
 
-  /* Values Section Mobile Stack */
   .about-values-grid {
     grid-template-columns: 1fr;
     gap: 15px;
@@ -566,12 +598,15 @@ p {
     flex-direction: row;
     justify-content: flex-start;
     padding: 25px 30px;
-    gap: 25px;
+    gap: 45px;
   }
 
   .about-value-icon {
     margin-bottom: 0;
-    width: 40px;
-    height: 40px;
+    /* width: 40px;
+    height: 40px; */
+  }
+  .about-future-content{
+    margin: 0px 20px;
   }
 }

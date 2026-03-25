@@ -24,6 +24,8 @@ import theatreWhite from "../../../public/assets/TheatreWhite.svg"
 import studioWhite from "../../../public/assets/studioWhite.svg"
 import rehersalWhite from "../../../public/assets/rehersalWhite.svg"
 import audioRecodingWhite from "../../../public/assets/audioRecodingWhite.svg"
+import sagaTheatreIcon from "../../../public/assets/intabcpaTop.svg"; 
+import sagaMicIcon from "../../../public/assets/intabcpaBottom.svg";
 import { motion, AnimatePresence } from 'framer-motion';
 // import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -231,7 +233,7 @@ const fadeInUp = {
 };
 
 const staggerContainer = {
-  hidden: { opacity: 1, y: 50 },
+  hidden: { opacity: 1, y: 20 },
   visible: { transition: { staggerChildren: 0.15 } }
 };
  
@@ -420,6 +422,8 @@ const [activeSpaceTab, setActiveSpaceTab] = useState('Stage');
             viewport={{ once: true }}
             variants={fadeInUp}
           >
+            <img src={sagaTheatreIcon} alt="" className="saga-mobile-icon saga-icon-top-left" />
+            <img src={sagaMicIcon} alt="" className="saga-mobile-icon saga-icon-bottom-right" />
             <h2 className="saga-title">INTABCPA SAGA</h2>
             <div className="saga-content">
               <p>
@@ -452,7 +456,6 @@ const [activeSpaceTab, setActiveSpaceTab] = useState('Stage');
         <div className="showtime-carousel-wrapper">
           <div 
             className="showtime-track" 
-            // We use a CSS variable to handle the transform math in CSS (makes responsive easier)
             style={{ '--slide-index': currentShowtimeIndex }}
           >
             {showtimeData.map((item) => (

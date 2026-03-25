@@ -240,13 +240,15 @@ const About = () => {
           variants={staggerContainer}
         >
           {/* Heading is now at the top, outside the flex container */}
-          <motion.h2 className="about-section-title" variants={fadeInUp}>
-            The INTABCPA Era
-          </motion.h2>
+          
 
           {/* New inner wrapper to handle the side-by-side layout */}
           <div className="about-era-content">
+            
             <div className="era-text-column">
+              <motion.h2 className="about-section-title" variants={fadeInUp}>
+            The INTABCPA Era
+          </motion.h2>
               <motion.p variants={fadeInUp}>
                 In 2004, a new chapter began with the Aditya Birla Group's support. The partnership formalised a shared vision to sustain the arts while preparing them for a contemporary audience. Under the guidance of Smt. Rajashree Birla, Indian National Theatre was renamed the INT Aditya Birla Centre for Performing Arts (INTABCPA).
               </motion.p>
@@ -342,8 +344,8 @@ const About = () => {
                   className="about-value-card" 
                   key={val.id} 
                   variants={fadeInUp}
-                  whileHover={{ y: -8, scale: 1.02, boxShadow: "0px 15px 30px rgba(0,0,0,0.08)" }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  // whileHover={{ y: -8, scale: 1.02, boxShadow: "0px 15px 30px rgba(0,0,0,0.08)" }}
+                  // transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
                   <img src={val.icon} alt={val.title} className="about-value-icon" />
                   <h4 className="about-value-title">{val.title}</h4>

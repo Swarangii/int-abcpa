@@ -34,11 +34,6 @@ const Login = () => {
           initial="hidden"
           animate="visible"
         >
-          {/* <motion.div className="login-logo-wrapper" variants={itemVariants}>
-            <Link to="/">
-            <img src={logoImg} alt="INT Aditya Birla Centre Logo" className="login-logo" />
-            </Link>
-          </motion.div> */}
           <motion.div variants={itemVariants}>
             <h1 className="login-title">Login Account</h1>
             <p className="login-subtitle">

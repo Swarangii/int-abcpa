@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './Signup.css';
-import logoImg from "../../../public/assets/logo.svg"; // Use your actual logo
-import maskImage from "../../../public/auth-media/MaskImg.png"; // The right-side image
-import googleIcon from "../../../public/auth-media/googleIcon.svg"; // Google G logo
+import logoImg from "../../../public/assets/logo.svg";
+import maskImage from "../../../public/auth-media/MaskImg.png";
+import googleIcon from "../../../public/auth-media/googleIcon.svg";
+import arrow from "../../../public/auth-media/toggle-arrow.svg";
 import { Link } from 'react-router-dom';
 
 const containerVariants = {
@@ -20,6 +21,21 @@ const itemVariants = {
 };
 
 const Signup = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState('Select State');
+
+  const options = [
+    { value: 'MP', label: 'Madhya Pradesh' },
+    { value: 'MH', label: 'Maharashtra' },
+    { value: 'DL', label: 'Delhi' },
+    { value: 'RJ', label: 'Rajasthan' },
+    { value: 'UP', label: 'Uttar Pradesh' },
+  ];
+
+  const handleSelect = (option) => {
+    setSelectedOption(option.label);
+    setIsOpen(false);
+  };
   return (
     <div className="signup-page-wrapper">
       <motion.div 
@@ -34,14 +50,6 @@ const Signup = () => {
           initial="hidden"
           animate="visible"
         >
-
-          {/* <motion.div className="signup-logo-wrapper" variants={itemVariants}>
-            <Link to="/">
-                        <img src={logoImg} alt="INT Aditya Birla Centre Logo" className="login-logo" />
-            </Link>
-          </motion.div> */}
-
-
           <motion.div variants={itemVariants}>
             <h1 className="signup-title">Create Your Account</h1>
             <p className="signup-subtitle">
@@ -75,12 +83,41 @@ const Signup = () => {
 
             <motion.div className="signup-input-row" variants={itemVariants}>
               <div className="signup-input-group">
-                <label>Password</label>
-                <input type="password" placeholder="* * * * * *" required />
-              </div>
+      <label>State</label>
+      <div className="custom-dropdown-container">
+        
+        {/* The visible selected value */}
+        <div 
+          className="custom-dropdown-header" 
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {selectedOption}
+          <span className={`arrow ${isOpen ? 'open' : ''}`}>
+            <img src={arrow} alt = "toggle arrow"></img>
+          </span>
+        </div>
+
+        {/* The dropdown list (Matches your image) */}
+        {isOpen && (
+          <ul className="custom-dropdown-list">
+            {options.map((option) => (
+              <li 
+                key={option.value} 
+                className="custom-dropdown-item"
+                onClick={() => handleSelect(option)}
+              >
+                {option.label}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+      
+      <input type="hidden" name="state" value={selectedOption} required />
+    </div>
               <div className="signup-input-group">
-                <label>Confirm Password</label>
-                <input type="password" placeholder="* * * * * *" required />
+                <label>City</label>
+                 <input type="text" placeholder="Bhopal" required />
               </div>
             </motion.div>
 

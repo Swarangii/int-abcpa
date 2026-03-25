@@ -89,7 +89,7 @@
 .social-title {
   font-size: 14px;
   font-weight: 600;
-  margin: 0 0 15px 0;
+  margin: 0 0 23.6px 0;
   color: #545454;
 }
 
@@ -160,7 +160,7 @@
   }
   
   .footer-logo {
-    max-width: 160px;
+    /* max-width: 160px; */
     margin: 0px;
   }
 
@@ -187,12 +187,14 @@
   }
 
   .nav-link-footer {
-    text-decoration: none;
     color: #545454;
-    font-size: 14px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
+font-family: Oxygen;
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: 20px; /* 142.857% */
+text-transform: uppercase;
+text-decoration: none;
   }
 
   .nav-link-footer::after {
@@ -210,9 +212,11 @@
   }
 
   .footer-bottom {
-    flex-direction: column;
+    /* flex-direction: column; */
+    font-size: 13px;
     gap: 10px;
-    text-align: center;
-    padding: 20px;
+    /* text-align:justify; */
+    
+    padding: 5px;
   }
 }
