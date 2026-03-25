@@ -1,0 +1,169 @@
+/* --- Page Layout --- */
+.flashback-page {
+  max-width: 1440px;
+  margin: 0 50px;
+  padding: 40px 20px;
+  color: var(--primary-text-color);
+}
+
+/* --- Breadcrumbs --- */
+.flashback-breadcrumbs {
+  font-size: 9px;
+  letter-spacing: 3.6px;
+  text-transform: uppercase;
+  color: var(--primary-text-color);
+  margin-bottom: 30px;
+}
+
+.flashback-breadcrumbs span {
+  margin: 0 8px;
+} 
+
+.flashback-breadcrumbs .flashback-current {
+  color: var(--primary-red-color);
+  font-weight: 700;
+}
+
+/* --- Header Section --- */
+.flashback-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.flashback-header h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--primary-text-color);
+  margin-bottom: 15px;
+}
+
+.flashback-year-filter {
+  font-size: 12px;
+  letter-spacing: 3.6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+ color: var(--primary-text-color);
+}
+
+.flashback-year-value {
+  color: var(--primary-red-color);
+  font-weight: 700;
+}
+
+.flashback-arrow-down {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* --- Grid Layout --- */
+.flashback-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+/* --- Card Styles --- */
+.flashback-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.flashback-card-image-container {
+  background-color: #F5EDED;
+  height: 300px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 3px;
+}
+
+.flashback-card-image-container img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.flashback-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.flashback-card-date {
+  font-size: 12px;
+  color: var(--primary-text-color);
+}
+
+.flashback-card-title {
+  color: var(--primary-text-color);
+font-family: Oxygen;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 24px;
+}
+
+.flashback-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.flashback-show-more-btn {
+  background-color: var(--primary-red-color);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: inherit;
+}
+.flashback-show-more-btn:hover{
+    background-color: #A4895D;
+}
+
+@media (max-width: 900px) {
+  .flashback-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  .flashback-breadcrumbs{
+    display: none;
+  }
+  .flashback-page{
+    margin: 0px;
+  }
+}
+
+@media (max-width: 600px) {
+  .flashback-grid {
+    grid-template-columns: 1fr;
+    gap: 40px; 
+  }
+  
+  .flashback-card-image-container {
+    /* height: 350px;  */
+    padding: 0px 10px;
+  }
+  .flashback-card{
+    width: 100%;
+  }
+
+  .flashback-header {
+    margin-bottom: 30px; 
+  }
+  .flashback-header h1{
+    font-size: 38px;
+  }
+  .flashback-button-container{
+    display: none;
+  }
+}

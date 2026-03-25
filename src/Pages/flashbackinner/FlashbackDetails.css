@@ -1,0 +1,255 @@
+:root {
+  --fbd-primary-text: #545454;
+  --fbd-maroon: #7D0B15;
+  --fbd-bg-pink: #F5EDED;
+  --fbd-border-color: #D9D9D9;
+}
+
+.fbd-page-wrapper {
+  font-family: "Oxygen", sans-serif;
+  color: var(--fbd-primary-text);
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+.fbd-hero-section {
+  background-color: var(--fbd-bg-pink);
+  padding: 10px 20px 30px 27px;
+  width: 100%;
+}
+
+.fbd-hero-content {
+  /* max-width: 1200px; */
+  margin: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.fbd-hero-text {
+  flex: 1;
+}
+
+.fbd-breadcrumbs {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--fbd-primary-text);
+  margin:0px 0px 40px 60px;
+}
+
+.fbd-breadcrumbs span {
+  margin: 0 5px;
+}
+
+.fbd-breadcrumbs .fbd-current {
+  color: var(--fbd-maroon);
+  font-weight: 700;
+}
+
+.fbd-hero-text h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--fbd-primary-text);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.fbd-hero-image-wrapper {
+  flex-shrink: 0;
+}
+
+.fbd-hero-image-wrapper img {
+  max-width: 250px;
+  max-height: 304px;
+  margin-right: 150px;
+  display: block;
+}
+
+/* --- Main Content Section --- */
+.fbd-main-section {
+  max-width: 1500px;
+  margin: 0 80px;
+  padding: 50px 20px;
+}
+
+.fbd-content-grid {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 60px;
+}
+
+/* --- Sidebar --- */
+.fbd-sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.fbd-meta-block {
+  padding: 20px 0;
+  border-top: 1px solid var(--fbd-border-color);
+}
+
+.fbd-meta-block:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.fbd-date {
+  font-size: 16px;
+  color: var(--fbd-primary-text);
+}
+
+.fbd-meta-block h4 {
+  font-size: 12px;
+  letter-spacing: 3.6px;
+  text-transform: uppercase;
+  color: var(--fbd-primary-text);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.fbd-social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.fbd-social-icons button {
+  width: 31px;
+  height: 31px;
+  background-color: var(--fbd-maroon);
+  color: white;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  transition: opacity 0.2s;
+}
+
+.fbd-social-icons button:hover {
+  opacity: 0.8;
+}
+
+.fbd-category-tags {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.fbd-tag {
+  background-color: var(--fbd-bg-pink);
+  color: var(--fbd-maroon);
+  padding: 6px 14px;
+  font-size: 16px;
+  font-weight: 400;
+  display: block;
+  white-space: nowrap;
+}
+
+.fbd-article {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.fbd-article-section h2 {
+  font-size: 24px;
+  color: var(--fbd-primary-text);
+  margin-bottom: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.fbd-article-section p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--fbd-primary-text);
+  margin-bottom: 20px;
+}
+
+.fbd-article-section p:last-child {
+  margin-bottom: 0;
+}
+.flashbackInner-cards-divider{
+    border-top: 1px solid #D9D9D9;
+    margin: 40px;
+}
+@media (max-width: 948px) {
+  .fbd-hero-content {
+    flex-direction: row; 
+    /* align-items: flex-start; */
+  }
+  
+  .fbd-hero-text h1 {
+    font-size: 38px;
+  }
+  
+  .fbd-hero-image-wrapper img {
+    /* max-width: 150px;  */
+    margin-right: 20px;
+  }
+
+  .fbd-content-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .fbd-sidebar {
+    padding-top: 20px;
+  }
+
+  .fbd-meta-block {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+  }
+  .fbd-main-section{
+    margin: 0 20px;
+  }
+  .fbd-hero-content{
+   margin: 20px 30px;
+  }
+    .fbd-breadcrumbs {
+    /* display: none; */
+    margin: 0px 0px 0px 0px;
+  }
+  .fbd-category-tags{
+    display: flex;
+    flex-direction: row;
+  }
+  
+}
+
+@media (max-width: 589px) {
+  .fbd-hero-section {
+    padding: 20px;
+  }
+  
+  .fbd-hero-text h1 {
+    font-size: 28px;
+  }
+  
+  .fbd-main-section {
+    padding: 30px 15px;
+  }
+  .fbd-breadcrumbs {
+    /* display: none; */
+    margin: 0px 0px 0px 0px;
+  }
+}
+
+@media (max-width: 768px) { 
+  .flashback-grid .flashback-card:not(:last-child) {
+    display: none;
+  }
+  
+  .flashback-grid {
+    grid-template-columns: 1fr;
+  }
+}

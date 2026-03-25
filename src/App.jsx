@@ -9,6 +9,8 @@ import Profile from "./profile/userProfile/profile"
 import Bookings from "./profile/bookings/Bookings";
 import Journey from "./Pages/journey/Journey";
 import NotFound from "./Pages/not-found/NotFound";
+import Flashback from "./Pages/flashback-files/Flashback";
+import FlashbackDetail from "./Pages/flashbackinner/FlashbackDetails";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
       <Route path="/bookings" element={<Bookings />} />
       <Route path="/journey" element={<Journey />} />
       <Route path="/notfound" element={<NotFound />} />
+      <Route path="/flashback" element={<Flashback />} />
+      <Route path="/flashbackinner" element={<FlashbackDetail />} />
       </Route>
 
       {/* Pages WITHOUT Navbar + Footer */}
