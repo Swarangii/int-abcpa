@@ -10,7 +10,6 @@ import youtube from "../../../public/assets/Youtube.svg";
 import linkedin from "../../../public/assets/Linkedin.svg";
 import twitter from "../../../public/assets/XTwitter.svg";
 
-
 const Footer = () => {
   return (
     <footer className="footer-wrapper">
@@ -43,6 +42,7 @@ const Footer = () => {
 
         <div className="footer-col footer-nav-col">
 
+          {/* Desktop Navigation */}
           <div className="nav-grid-desktop">
             <div className="nav-col">
               <a href="#about">ABOUT</a>
@@ -58,17 +58,24 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Tablet & Mobile Navigation with Separators */}
           <div className="nav-flex-mobile">
             <div className="nav-row">
               <a href="#about" className="nav-link-footer">ABOUT</a>
+              <span className="nav-separator">|</span>
               <a href="#spaces" className="nav-link-footer">SPACES</a>
+              <span className="nav-separator">|</span>
               <a href="#initiatives" className="nav-link-footer">INITIATIVES</a>
+              <span className="nav-separator">|</span>
               <a href="#legacy" className="nav-link-footer">LEGACY</a>
             </div>
             <div className="nav-row mt-mobile">
               <a href="#book" className="nav-link-footer">BOOK NOW</a>
+              <span className="nav-separator">|</span>
               <a href="#pulse" className="nav-link-footer">PULSE & PAGE</a>
+              <span className="nav-separator">|</span>
               <a href="#blogs" className="nav-link-footer">BLOGS</a>
+              <span className="nav-separator">|</span>
               <a href="#hello" className="nav-link-footer">HELLO</a>
             </div>
           </div>

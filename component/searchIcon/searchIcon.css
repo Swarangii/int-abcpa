@@ -1,0 +1,122 @@
+:root {
+  --primary-red: #7D0B15; 
+  --text-dark: #545454;
+  --bg-white: #FFFFFF;
+  
+  --collapsed-width: 160px;
+  --search-bg: var(--bg-white);
+  --icon-color: var(--primary-red);
+  --border-color: #EAEAEA;
+}
+
+@media screen and (max-width: 950px) {
+  :root {
+    --collapsed-width: 65px; 
+    --search-bg: var(--primary-red); 
+    --icon-color: #FFFFFF;
+    --border-color: transparent;
+  }
+}
+
+.search-wrapper {
+  background-color: var(--search-bg);
+  height: 65px; 
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.search-wrapper.is-expanded {
+  cursor: text;
+  background-color: var(--bg-white);
+  border-color: var(--primary-red);
+}
+
+.search-wrapper.is-expanded .search-icon-svg {
+  color: var(--primary-red);
+}
+
+.search-content {
+  display: flex;
+  align-items: center;
+  width:  564px ; 
+  padding: 0 15px;
+  gap: 16px;
+  height: 100%;
+  border: none;
+}
+
+.search-icon-svg {
+  color: var(--icon-color);
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.search-text-label {
+ color: #545454;
+font-family: Oxygen;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 22px; /* 183.333% */
+letter-spacing: 3.6px;
+text-transform: uppercase;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  color: #545454;
+font-family: Oxygen;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 22px; /* 183.333% */
+letter-spacing: 3.6px;
+text-transform: uppercase;
+  background: transparent;
+  width: 100%;
+  /* min-width: 100px; */
+}
+
+.search-input::placeholder {
+  color: #999;
+  font-weight: 400;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 950px) {
+  .search-content {
+    padding: 0;
+    justify-content: center; 
+  }
+  
+  .search-wrapper.is-expanded .search-content {
+    padding: 0 20px; 
+    justify-content: flex-start;
+  }
+
+  .search-text-label {
+    display: none;
+  }
+  
+}

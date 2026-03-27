@@ -1,0 +1,235 @@
+/* --- Base Variables (Reusing your theme) --- */
+:root {
+  --st-maroon: #7D0B15;
+  --st-light-pink: #F8EDED;
+  --st-text-main: #545454;
+  --st-text-light: #545454;
+  --st-border-color: #EAEAEA;
+}
+
+.std-page-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: "Oxygen", sans-serif;
+  color: var(--st-text-main);
+}
+
+/* --- Breadcrumbs --- */
+.std-breadcrumbs {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 30px;
+}
+
+.std-breadcrumbs span { margin: 0 5px; }
+.std-breadcrumbs .std-current { color: var(--st-maroon); font-weight: 700; }
+
+/* --- Main Layout Grid --- */
+.std-main-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  grid-template-areas: 
+    "banner info"
+    "about info"
+    "artists info";
+  gap: 40px 50px;
+}
+
+.std-banner-area { grid-area: banner; }
+.std-info-area { grid-area: info; }
+.std-about-area { grid-area: about; }
+.std-artists-area { grid-area: artists; }
+
+.std-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.std-info-card {
+  background-color: var(--st-light-pink);
+  padding: 35px;
+  position: sticky; 
+  top: 30px;
+}
+
+.std-info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.std-info-group {
+  margin-bottom: 25px;
+}
+
+.std-info-group label, .std-booking-section label {
+  display: block;
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.std-maroon-text {
+  color: var(--st-maroon);
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.std-icon-btn {
+  background-color: var(--st-maroon);
+  color: white;
+  border: none;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.std-icon-btn:hover { opacity: 0.8; }
+
+.std-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.std-contact-item p {
+  font-size: 13px;
+  color: var(--st-maroon);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.std-icon {
+  color: #A0A0A0;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.std-booking-section {
+  margin-top: 40px;
+}
+
+.std-bms-logo {
+  margin-bottom: 25px;
+}
+
+.std-btn-book {
+  background-color: var(--st-maroon);
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 16px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.std-btn-book:hover { background-color: #5c080f; }
+
+.std-about-area h2, .std-artists-area h2 {
+  font-size: 32px;
+  color: #555;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.std-about-area p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--st-text-light);
+  margin-bottom: 20px;
+}
+
+.std-artists-area {
+  margin-top: 20px;
+}
+
+.std-artists-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.std-artist-img-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  margin-bottom: 15px;
+  background-color: #eee;
+}
+
+.std-artist-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.std-artist-info h3 {
+  font-size: 15px;
+  color: #333;
+  margin: 0 0 5px 0;
+  font-weight: 600;
+}
+
+.std-artist-info p {
+  font-size: 13px;
+  color: var(--st-maroon);
+  margin: 0;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (MOBILE LAYOUT)
+   ========================================= */
+@media (max-width: 900px) {
+  
+  .std-main-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "banner"
+      "info"
+      "about"
+      "artists";
+    gap: 30px;
+  }
+
+  .std-info-card {
+    position: static;
+    padding: 25px;
+  }
+
+  .std-about-area h2, .std-artists-area h2 {
+    font-size: 26px;
+  }
+
+  .std-artists-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .std-artist-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .std-artist-img-wrapper {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+}

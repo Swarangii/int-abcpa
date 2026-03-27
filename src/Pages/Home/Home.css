@@ -1394,6 +1394,8 @@ text-decoration: none;
   }
   .pulse-carousel-wrapper{
     justify-content: center !important;
+    margin: 0px;
+    padding: 10px;
   }
   .insider-container{
     margin: 0px 0px 50px;
@@ -1406,6 +1408,9 @@ text-decoration: none;
   }
   .pulse-controls{
     justify-content: space-between;
+  }
+  .amenity-carousel-wrapper{
+    margin: 0px 40px;
   }
 }
 

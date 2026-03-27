@@ -11,6 +11,9 @@ import Journey from "./Pages/journey/Journey";
 import NotFound from "./Pages/not-found/NotFound";
 import Flashback from "./Pages/flashback-files/Flashback";
 import FlashbackDetail from "./Pages/flashbackinner/FlashbackDetails";
+import Showtime from "./Pages/showtime/Showtime";
+import ShowtimeDetails from "./Pages/showtimelive/ShowtimeDetails";
+import ShowtimeWas from "./Pages/showtimewas/ShowtimeWas";
 
 function App() {
   return (
@@ -29,6 +32,9 @@ function App() {
       <Route path="/notfound" element={<NotFound />} />
       <Route path="/flashback" element={<Flashback />} />
       <Route path="/flashbackinner" element={<FlashbackDetail />} />
+      <Route path="/showtime" element={<Showtime />} />
+      <Route path="/showtimedetail" element={<ShowtimeDetails />} />
+      <Route path="/showtimewas" element={<ShowtimeWas />} />
       </Route>
 
       {/* Pages WITHOUT Navbar + Footer */}
