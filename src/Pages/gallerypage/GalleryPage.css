@@ -1,0 +1,213 @@
+/* Layout & Container */
+.gallery-page-wrapper {
+  width: 100%;
+  background-color: #ffffff;
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+.gallery-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (min-width: 768px) {
+  .gallery-page-container {
+    padding: 0 32px;
+  }
+}
+
+/* Breadcrumbs */
+.gallery-page-breadcrumbs {
+  font-size: 14px; /* Normal text size per spec */
+  font-weight: 400; /* Rest is 400 per spec */
+  color: #a0a0a0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+
+.gallery-page-arrow {
+  margin: 0 4px;
+  font-size: 10px;
+}
+
+.gallery-page-current {
+  color: var(--primary-red-color);
+}
+
+/* Headings & Subheadings Typography Rules */
+.gallery-page-title {
+  text-align: center;
+  color: var(--primary-text-color);
+  font-weight: 700;
+  font-size: 38px;
+  margin-bottom: 32px;
+}
+
+.gallery-page-subheading {
+  font-weight: 400;
+  font-size: 24px;
+  color: var(--primary-text-color);
+}
+
+@media (min-width: 768px) {
+  .gallery-page-title {
+    font-size: 48px;
+  }
+}
+
+/* Filters Section */
+.gallery-page-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.gallery-page-filter-group {
+  position: relative;
+}
+
+.gallery-page-filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px 0;
+  font-size: 14px; /* Normal text size */
+  font-weight: 400; /* Rest is 400 */
+}
+
+.gallery-page-filter-label {
+  color: var(--primary-text-color);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.gallery-page-filter-value {
+  color: var(--primary-red-color);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+.gallery-page-icon-gray {
+  color: var(--primary-text-color);
+}
+
+/* Dropdown (No border radius, no box shadow) */
+.gallery-page-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 160px;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-page-dropdown-item {
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--primary-text-color);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.gallery-page-dropdown-item:hover {
+  background-color: #f5f5f5;
+}
+
+.gallery-page-dropdown-active {
+  background-color: rgba(125, 11, 21, 0.08); /* Faint red highlight */
+  color: var(--primary-red-color);
+}
+
+/* Grid Layout */
+.gallery-page-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-bottom: 64px;
+}
+
+@media (min-width: 768px) {
+  .gallery-page-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Cards (No border radius, no box shadow) */
+.gallery-page-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-page-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+
+.gallery-page-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Square Badge per instructions (no border-radius) */
+.gallery-page-badge {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border-radius intentionally omitted */
+}
+
+.gallery-page-card-title {
+  margin-top: 16px;
+  font-size: 14px; /* Normal text size */
+  font-weight: 400; /* Rest is 400 */
+  color: var(--primary-text-color);
+}
+
+/* Footer & Button (No border radius) */
+.gallery-page-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.gallery-page-show-more-btn {
+  background-color: var(--primary-red-color);
+  color: #ffffff;
+  border: none;
+  padding: 16px 48px;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  /* border-radius intentionally omitted */
+}
+
+.gallery-page-show-more-btn:hover {
+  background-color: #5c0810;
+}

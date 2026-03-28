@@ -230,6 +230,7 @@
     margin-top: 20px;
     justify-content: center;
     width: 100%;
+    margin-bottom: 20px;
   }
 
   .ed-dot {
@@ -238,6 +239,8 @@
     background-color: #EAEAEA;
     /* NO border-radius per constraints, so they are tiny squares! */
     transition: background-color 0.3s ease;
+    border-radius: 50%;
+
   }
 
   .ed-dot.active {

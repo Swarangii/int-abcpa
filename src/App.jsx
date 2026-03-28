@@ -15,6 +15,9 @@ import Showtime from "./Pages/showtime/Showtime";
 import ShowtimeDetails from "./Pages/showtimelive/ShowtimeDetails";
 import ShowtimeWas from "./Pages/showtimewas/ShowtimeWas";
 import ShowtimeWasDetail from "./Pages/showtimewasdetail/showtimewasdetail";
+import PioneersPage from "./Pages/pironeerspage/pironeerspage";
+import GalleryPage from "./Pages/gallerypage/GalleryPage";
+import AuditoriumPage from "./Pages/auditorium/AuditoriumPage";
 
 function App() {
   return (
@@ -37,6 +40,9 @@ function App() {
       <Route path="/showtimedetail" element={<ShowtimeDetails />} />
       <Route path="/showtimewas" element={<ShowtimeWas />} />
       <Route path="/showtimewasdetail" element={<ShowtimeWasDetail/>} />
+      <Route path="/pironeerspage" element={<PioneersPage/>} />
+      <Route path="/gallerypage" element={<GalleryPage/>} />
+      <Route path="/auditoriumpage" element={<AuditoriumPage/>} />
       </Route>
 
       {/* Pages WITHOUT Navbar + Footer */}

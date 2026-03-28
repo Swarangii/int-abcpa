@@ -5,10 +5,10 @@ import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 // --- MOCK ASSETS (Replace with your actual imports) ---
-import heroBanner from "../../../public/assets/show-1.png"; 
-import gallery1 from "../../../public/assets/show-1.png";
-import gallery2 from "../../../public/assets/show-2.png";
-import gallery3 from "../../../public/assets/show-1.png";
+import heroBanner from "../../../public/showtime/banner.png"; 
+import gallery1 from "../../../public/showtime/bottom2.png";
+import gallery2 from "../../../public/showtime/bottom1.png";
+import gallery3 from "../../../public/showtime/bottom2.png";
 
 // --- MOCK DATA ---
 const eventData = {

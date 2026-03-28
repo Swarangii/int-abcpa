@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { MapPin, Phone, Instagram } from 'lucide-react';
 import './ShowtimeDetails.css';
 import show1 from "../../../public/assets/show-1.png"
-import bookmyshowLogo from "../../../public/showtime/bookmyshow.webp"
+import bookmyshowLogo from "../../../public/showtime/bookmyshow.png"
 
 
 
