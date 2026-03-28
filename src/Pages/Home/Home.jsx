@@ -70,12 +70,12 @@ const showtimeData = [
     title: 'Zen Katha',
     description: 'A fascinating story of Bodhidharma, a Prince from the ancient kingdom of Kanchi,who was the true founder of Zen and the Martial Arts, as we know them today.',
   },
-  // {
-  //   id: 3,
-  //   image: 'https://images.unsplash.com/photo-1518834107812-6a8812f9e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-  //   title: 'The Modern Tempest',
-  //   description: 'A contemporary reimagining of a classic tale, exploring themes of magic, betrayal, and reconciliation in a modern digital age setting.',
-  // }
+  {
+    id: 3,
+    image: show1,
+    title: 'The Modern Tempest',
+    description: 'A contemporary reimagining of a classic tale, exploring themes of magic, betrayal, and reconciliation in a modern digital age setting.',
+  }
 ];
 
 
@@ -212,54 +212,27 @@ const ChevronRight = () => (
   </svg>
 );
 
-const ChevronLeftDark = () => (
+// Replace the old ChevronLeftDark and ChevronRightDark with these:
+const ChevronLeftDynamic = ({ color = "#333" }) => (
   <svg width="18" height="30" viewBox="0 0 24 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M22 2L4 20L22 38" stroke="#333" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M22 2L4 20L22 38" stroke={color} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
-const ChevronRightDark = () => (
+const ChevronRightDynamic = ({ color = "#333" }) => (
   <svg width="18" height="30" viewBox="0 0 24 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M2 2L20 20L2 38" stroke="#333" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M2 2L20 20L2 38" stroke={color} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
 
-// animations of framer motion
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 3, transition: { duration: 0.7, ease: "easeOut" } }
-};
-
-const staggerContainer = {
-  hidden: { opacity: 1, y: 20 },
-  visible: { transition: { staggerChildren: 0.15 } }
-};
- 
-const revealFromLeft = {
-  hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } }
-};
-
-const revealFromRight = {
-  hidden: { opacity: 0, x: 50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } }
-};
-
-
-const tabTextVariants = {
-  hidden: { opacity: 0, y: 15 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-  exit: { opacity: 0, y: -15, transition: { duration: 0.3, ease: "easeIn" } }
-};
-
-const tabImageVariants = {
-  hidden: { opacity: 0, scale: 0.95, x: 20 },
-  visible: { opacity: 1, scale: 1, x: 0, transition: { duration: 0.6, ease: "easeOut", delay: 0.1 } },
-  exit: { opacity: 0, scale: 0.95, x: -20, transition: { duration: 0.3, ease: "easeIn" } }
-};
-
+// --- Animations ---
+const fadeInUp = { hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 3, transition: { duration: 0.7, ease: "easeOut" } } };
+const staggerContainer = { hidden: { opacity: 1, y: 20 }, visible: { transition: { staggerChildren: 0.15 } } };
+const revealFromLeft = { hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } } };
+const revealFromRight = { hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } } };
+const tabTextVariants = { hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }, exit: { opacity: 0, y: -15, transition: { duration: 0.3, ease: "easeIn" } } };
+const tabImageVariants = { hidden: { opacity: 0, scale: 0.95, x: 20 }, visible: { opacity: 1, scale: 1, x: 0, transition: { duration: 0.6, ease: "easeOut", delay: 0.1 } }, exit: { opacity: 0, scale: 0.95, x: -20, transition: { duration: 0.3, ease: "easeIn" } } };
 
 const Home = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -310,22 +283,26 @@ const [activeSpaceTab, setActiveSpaceTab] = useState('Stage');
     setCurrentIndex(newIndex);
   };
 // --- Showtime Logic ---
-  const nextShowtime = () => {
+  // If on tablet/mobile, we show 1 card at a time. If on desktop, we show 2.
+  const maxShowtimeIndex = isTablet 
+    ? showtimeData.length - 1 
+    : Math.max(0, showtimeData.length - 2);
 
-    if (currentShowtimeIndex < showtimeData.length - 1) {
+  const nextShowtime = () => {
+    if (currentShowtimeIndex < maxShowtimeIndex) {
       setCurrentShowtimeIndex(prev => prev + 1);
-    } else {
-      setCurrentShowtimeIndex(0);
     }
   };
 
   const prevShowtime = () => {
     if (currentShowtimeIndex > 0) {
       setCurrentShowtimeIndex(prev => prev - 1);
-    } else {
-      setCurrentShowtimeIndex(showtimeData.length - 1);
     }
   };
+
+  // Determine colors based on whether we can scroll further
+  const leftArrowColor = currentShowtimeIndex > 0 ? '#7D0B15' : '#333333';
+  const rightArrowColor = currentShowtimeIndex < maxShowtimeIndex ? '#7D0B15' : '#333333';
   return (
 
     <div>
@@ -491,18 +468,31 @@ const [activeSpaceTab, setActiveSpaceTab] = useState('Stage');
         </div>
 
         {/* Controls */}
+        {/* Controls */}
         <motion.div 
         className="showtime-controls"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
       >
-        <button onClick={prevShowtime} className="showtime-arrow-btn">
-          <ChevronLeftDark />
+        <button 
+          onClick={prevShowtime} 
+          className="showtime-arrow-btn"
+          disabled={currentShowtimeIndex === 0}
+          style={{ cursor: currentShowtimeIndex === 0 ? 'default' : 'pointer' }}
+        >
+          <ChevronLeftDynamic color={leftArrowColor} />
         </button>
+        
         <button className="showtime-btn-view-all">VIEW ALL</button>
-        <button onClick={nextShowtime} className="showtime-arrow-btn">
-          <ChevronRightDark />
+        
+        <button 
+          onClick={nextShowtime} 
+          className="showtime-arrow-btn"
+          disabled={currentShowtimeIndex === maxShowtimeIndex}
+          style={{ cursor: currentShowtimeIndex === maxShowtimeIndex ? 'default' : 'pointer' }}
+        >
+          <ChevronRightDynamic color={rightArrowColor} />
         </button>
       </motion.div>
       </section>
@@ -807,21 +797,31 @@ const [activeSpaceTab, setActiveSpaceTab] = useState('Stage');
 
           {/* Controls */}
           <motion.div 
-            className="pulse-controls"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-          >
-            <button onClick={prevPulse} className="pulse-arrow-btn">
-              <ChevronLeftDark />
-            </button>
-            <motion.button whileHover={{ scale: 1.05 }} className="pulse-btn-view-all">
-              VIEW ALL
-            </motion.button>
-            <button onClick={nextPulse} className="pulse-arrow-btn">
-              <ChevronRightDark />
-            </button>
-          </motion.div>
+        className="showtime-controls"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+      >
+        <button 
+          onClick={prevShowtime} 
+          className="showtime-arrow-btn"
+          disabled={currentShowtimeIndex === 0}
+          style={{ cursor: currentShowtimeIndex === 0 ? 'default' : 'pointer' }}
+        >
+          <ChevronLeftDynamic color={leftArrowColor} />
+        </button>
+        
+        <button className="showtime-btn-view-all">VIEW ALL</button>
+        
+        <button 
+          onClick={nextShowtime} 
+          className="showtime-arrow-btn"
+          disabled={currentShowtimeIndex === maxShowtimeIndex}
+          style={{ cursor: currentShowtimeIndex === maxShowtimeIndex ? 'default' : 'pointer' }}
+        >
+          <ChevronRightDynamic color={rightArrowColor} />
+        </button>
+      </motion.div>
         </div>
       </section>
 
@@ -840,11 +840,7 @@ const [activeSpaceTab, setActiveSpaceTab] = useState('Stage');
           <motion.form 
             className="insider-form" 
             onSubmit={(e) => e.preventDefault()}
-            variants={fadeInUp}
-
-
-
-             
+            variants={fadeInUp}   
           >
             <input 
               type="email" 
