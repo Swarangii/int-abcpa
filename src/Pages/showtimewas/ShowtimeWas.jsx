@@ -67,7 +67,13 @@ const ShowtimeWas = () => {
 
   return (
     <div className="stw-page-wrapper">
-      
+      {/* Breadcrumbs */}
+      <nav className="flashback-breadcrumbs">
+      HOME <span></span><div style={{ fontSize: "5px", color: "#7D0B15" }} className="fa">
+  &#xf04b;
+</div>
+<span className="flashback-current">SHOWTIME</span>
+      </nav>
       {/* HEADER SECTION */}
       <header className="stw-header">
         <h1 className="stw-main-title">Was Live</h1>

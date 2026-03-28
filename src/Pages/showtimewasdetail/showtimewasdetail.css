@@ -1,0 +1,246 @@
+/* Inherits: 
+   --primary-text-color: #545454;
+   --primary-red-color: #7D0B15;
+   font-family: "Oxygen", sans-serif;
+*/
+
+.ed-page-wrapper {
+  margin: 0 80px;
+  /* padding: 40px 20px 80px 20px; */
+  background-color: #FFFFFF;
+}
+
+.ed-top-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.ed-breadcrumbs {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #545454;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ed-sep {
+  color: var(--primary-red-color);
+  font-size: 12px;
+}
+
+.ed-current {
+  color: var(--primary-red-color);
+  font-weight: 700;
+}
+
+.ed-hero-wrapper {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.ed-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ed-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--primary-text-color);
+  margin: 0 0 30px 0;
+  white-space: pre-line; 
+  line-height: 1.2;
+}
+
+.ed-subtitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-text-color);
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+.ed-meta-box {
+  margin-bottom: 40px;
+}
+
+.ed-meta-text, 
+.ed-credit-text, 
+.ed-paragraph {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--primary-text-color);
+  margin: 0 0 8px 0;
+  line-height: 1.6;
+}
+
+.ed-meta-text {
+  margin-bottom: 16px;
+}
+
+.ed-bold {
+  font-weight: 700; 
+}
+
+.ed-description-box {
+  margin-bottom: 80px;
+}
+
+.ed-paragraph {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.ed-gallery-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ed-gallery-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.ed-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  flex-grow: 1;
+}
+
+.ed-gallery-item {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.ed-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ed-gallery-nav {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.ed-arrow-icon {
+  color: var(--primary-red-color);
+  stroke-width: 1.5px;
+  transition: transform 0.2s ease;
+}
+
+.ed-gallery-nav:hover .ed-arrow-icon {
+  transform: scale(1.1);
+}
+
+.ed-mobile-dots {
+  display: none; /* Hidden on desktop */
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (MOBILE LAYOUT)
+   ========================================= */
+
+@media (max-width: 900px) {
+  
+  .ed-page-wrapper {
+    margin: 0 20px;
+    /* padding: 20px 15px 60px 15px; */
+  }
+
+  /* MAGIC TRICK: Reverses the order so breadcrumbs fall BELOW the image on mobile */
+  .ed-top-container {
+    flex-direction: column-reverse;
+    margin-bottom: 30px;
+  }
+
+  .ed-breadcrumbs {
+    margin-top: 15px; /* Adds space above breadcrumbs when below image */
+    margin-bottom: 0;
+    font-size: 10px; /* Scaling down breadcrumbs slightly for small screens */
+  }
+
+  .ed-hero-wrapper {
+    height: 250px;
+  }
+
+  /* Strict Mobile Heading Constraint */
+  .ed-title {
+    font-size: 38px;
+    margin-bottom: 20px;
+  }
+
+  .ed-paragraph {
+    text-align: left; /* Better readability on narrow screens */
+  }
+
+  /* Gallery Mobile Layout */
+  .ed-gallery-nav {
+    display: none; /* Hide side arrows on mobile */
+  }
+
+  .ed-subtitle {
+    text-align: left;
+    width: 100%;
+  }
+
+  .ed-gallery-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    gap: 15px;
+    margin-right: -15px; /* Bleed to edge */
+    padding-right: 15px;
+  }
+
+  .ed-gallery-grid::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  .ed-gallery-item {
+    flex: 0 0 85%; /* Shows 1 full image and a peek of the next */
+    scroll-snap-align: center;
+  }
+
+  /* Mobile Pagination Dots */
+  .ed-mobile-dots {
+    display: flex;
+    gap: 8px;
+    margin-top: 20px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .ed-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #EAEAEA;
+    /* NO border-radius per constraints, so they are tiny squares! */
+    transition: background-color 0.3s ease;
+  }
+
+  .ed-dot.active {
+    background-color: #C09B66; /* Matching the gold/tan color from the mobile screenshot */
+  }
+}

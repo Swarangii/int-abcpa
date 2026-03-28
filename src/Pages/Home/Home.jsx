@@ -834,7 +834,7 @@ const [activeSpaceTab, setActiveSpaceTab] = useState('Stage');
           viewport={{ once: true, amount: 0.3 }}
           variants={staggerContainer}
         >
-          <motion.h2 className="insider-title" variants={fadeInUp}>INTABCPA INSIDER</motion.h2>
+          <motion.h2 className="insider-title" variants={fadeInUp}>INTABCPA Insider</motion.h2>
           <motion.h3 className="insider-subtitle" variants={fadeInUp}>Sign up to know what's on stage & beyond</motion.h3>
           
           <motion.form 

@@ -3,7 +3,7 @@
 .stw-page-wrapper {
   /* max-width: 1200px; */
   margin: 0 80px;
-  padding: 50px 20px;
+  /* padding: 50px 20px; */
   color: var(--primary-text-color);
   font-family: "Oxygen", sans-serif;
   overflow-x: hidden;
@@ -204,7 +204,7 @@
 .stw-show-more-container {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin: 40px 0px;
 }
 
 .stw-btn-solid {

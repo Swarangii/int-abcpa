@@ -14,6 +14,7 @@ import FlashbackDetail from "./Pages/flashbackinner/FlashbackDetails";
 import Showtime from "./Pages/showtime/Showtime";
 import ShowtimeDetails from "./Pages/showtimelive/ShowtimeDetails";
 import ShowtimeWas from "./Pages/showtimewas/ShowtimeWas";
+import ShowtimeWasDetail from "./Pages/showtimewasdetail/showtimewasdetail";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
       <Route path="/showtime" element={<Showtime />} />
       <Route path="/showtimedetail" element={<ShowtimeDetails />} />
       <Route path="/showtimewas" element={<ShowtimeWas />} />
+      <Route path="/showtimewasdetail" element={<ShowtimeWasDetail/>} />
       </Route>
 
       {/* Pages WITHOUT Navbar + Footer */}
