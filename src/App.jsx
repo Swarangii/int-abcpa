@@ -18,6 +18,11 @@ import ShowtimeWasDetail from "./Pages/showtimewasdetail/showtimewasdetail";
 import PioneersPage from "./Pages/pironeerspage/pironeerspage";
 import GalleryPage from "./Pages/gallerypage/GalleryPage";
 import AuditoriumPage from "./Pages/auditorium/AuditoriumPage";
+import ContactPage from "./Pages/contact/contactPage";
+import InitiativesPage from "./Pages/initiative/InitiativesPage";
+import InitiativeInnerPage from "./Pages/initiative-inner/InitiativeInnerPage";
+import PulsePage from "./Pages/pulsePage/PulsePage";
+import BlogPage from "./Pages/blogpage/BlogPage";
 
 function App() {
   return (
@@ -33,7 +38,7 @@ function App() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/bookings" element={<Bookings />} />
       <Route path="/journey" element={<Journey />} />
-      <Route path="/notfound" element={<NotFound />} />
+      <Route path="*" element={<NotFound />} />
       <Route path="/flashback" element={<Flashback />} />
       <Route path="/flashbackinner" element={<FlashbackDetail />} />
       <Route path="/showtime" element={<Showtime />} />
@@ -43,6 +48,11 @@ function App() {
       <Route path="/pironeerspage" element={<PioneersPage/>} />
       <Route path="/gallerypage" element={<GalleryPage/>} />
       <Route path="/auditoriumpage" element={<AuditoriumPage/>} />
+      <Route path="/contact" element={<ContactPage/>} />
+      <Route path="/initiative" element={<InitiativesPage/>} />
+      <Route path="/initiativeinner" element={<InitiativeInnerPage/>} />
+      <Route path="/pulsePage" element={<PulsePage/>} />
+      <Route path="/blogPage" element={<BlogPage/>} />
       </Route>
 
       {/* Pages WITHOUT Navbar + Footer */}

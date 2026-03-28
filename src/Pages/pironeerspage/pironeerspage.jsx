@@ -1,63 +1,72 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ChevronRight } from 'lucide-react';
-import './pironeerspage.css'; // Make sure to import the CSS file
+import './pironeerspage.css';
+// import banner from "../../../public/pironeers/banner.png"
+import img1 from "../../../public/pironeers/img1.png"
+import img2 from "../../../public/pironeers/img2.png"
+import img3 from "../../../public/pironeers/img3.png"
+import img4 from "../../../public/pironeers/img4.png"
+import img5 from "../../../public/pironeers/img5.png"
+import img6 from "../../../public/pironeers/img6.png"
+import img7 from "../../../public/pironeers/img7.png"
+import img8 from "../../../public/pironeers/img8.png"
 
 const pioneersData = [
   {
     id: 1,
     name: 'Acharya Parvati Kumar',
     role: 'Nrutya Maharshi',
-    image: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=500&auto=format&fit=crop',
+    image: img1,
     description: 'Acharya Parvati Kumar (1921–2012), revered as Nrutya Maharshi, was a dancer, choreographer and scholar who bridged Bharatanatyam, Kathakali and Kathak with rare authority. At Indian National Theatre, Bombay (1947–1965), he shaped landmark dance-ballets including Discovery of India and Dekh Teri Bambai, bringing discipline, scholarship and stagecraft to India\'s evolving modern dance vocabulary.'
   },
   {
     id: 2,
     name: 'Pravin Joshi',
     role: 'Influential figures',
-    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=500&auto=format&fit=crop',
+    image: img2,
     description: 'Pravin Joshi was a highly influential figure in modern Indian theatre, known for his dynamic approach to staging and script selection. He left an indelible mark on the Gujarati theatre scene.'
   },
   {
     id: 3,
     name: 'Gautam Joshi',
     role: 'Technical Director',
-    image: 'https://images.unsplash.com/photo-1544723795-3cj5a2605e60?q=80&w=500&auto=format&fit=crop',
+    image: img3,
     description: 'Gautam Joshi served as a pivotal Technical Director, pioneering lighting and stage design techniques that modernized the visual storytelling of stage productions during his era.'
   },
   {
     id: 4,
     name: 'P L Deshpande',
     role: 'Memorable association',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=500&auto=format&fit=crop',
+    image: img4,
     description: 'Purushottam Laxman Deshpande, popularly known as Pu La, was a legendary Marathi writer, humorist, and actor whose association brought unmatched literary depth to the stage.'
   },
   {
     id: 5,
     name: 'Atmaram Bhende',
     role: 'Secretary',
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=500&auto=format&fit=crop',
+    image: img5,
     description: 'Atmaram Bhende dedicated years as the Secretary, orchestrating behind-the-scenes administration and ensuring the smooth operation of countless theatrical endeavors.'
   },
   {
     id: 6,
     name: 'Adi Marzban',
     role: 'Director',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=500&auto=format&fit=crop',
+    image: img6,
     description: 'Adi Marzban was a celebrated Parsi theatre director and playwright, revolutionizing Bombay\'s theatre circuit with his sharp wit, satirical plays, and innovative direction.'
   },
   {
     id: 7,
     name: 'Vanlata Mehta',
     role: 'Guiding force',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=500&auto=format&fit=crop',
+    image: img7,
     description: 'Vanlata Mehta was a guiding force for many upcoming artists. Her mentorship and vision helped shape the foundational years of several prominent theatre institutions.'
   },
   {
     id: 8,
     name: 'M S Sathyu',
     role: 'Stage designers and director',
-    image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=500&auto=format&fit=crop',
+    image: img8,
     description: 'M S Sathyu is an acclaimed art director, stage designer, and film director. His unparalleled visual aesthetic set new benchmarks for set design in Indian theatre.'
   }
 ];
@@ -72,10 +81,10 @@ export default function PioneersPage() {
       <div className="pioneers-page-hero-section">
         <div 
           className="pioneers-page-hero-overlay"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1920&auto=format&fit=crop')" }}
+          style={{ backgroundImage: "url('../../../public/pironeers/banner.png')" }}
         />
         <div className="pioneers-page-breadcrumbs">
-          HOME <span>▸</span> LEGACY <span>▸</span> THE PIONEERS
+          HOME <span>▸</span> LEGACY <span>▸</span>THE PIONEERS
         </div>
         <h1 className="pioneers-page-hero-title">The Pioneers</h1>
       </div>

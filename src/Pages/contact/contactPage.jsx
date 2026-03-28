@@ -2,6 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import './ContactPage.css'; 
+import banner from "../../../public/contact/banner.png"
+import img from "../../../public/contact/img.png"
+import maskimg from "../../../public/auth-media/MaskImg.png"
 
 export default function ContactPage() {
   const fadeUpVariant = {
@@ -31,7 +34,7 @@ export default function ContactPage() {
           </p>
           <div className="contact-page-hero-image-wrapper">
             <img 
-              src="https://images.unsplash.com/photo-1541888079632-4166297ea40b?q=80&w=1920&auto=format&fit=crop" 
+              src={banner} 
               alt="INT Aditya Birla Centre Building" 
               className="contact-page-hero-img"
             />
@@ -88,7 +91,7 @@ export default function ContactPage() {
           
           <div className="contact-page-info-image-wrapper">
             <img 
-              src="https://images.unsplash.com/photo-1516280440503-65fbe1148496?q=80&w=800&auto=format&fit=crop" 
+              src={img} 
               alt="Microphone on stage" 
               className="contact-page-info-img"
             />
@@ -123,7 +126,7 @@ export default function ContactPage() {
         >
           <div className="contact-page-form-image-wrapper">
             <img 
-              src="https://images.unsplash.com/photo-1509668521827-09179975005e?q=80&w=800&auto=format&fit=crop" 
+              src={maskimg}
               alt="Theatre Masks" 
               className="contact-page-form-img"
             />

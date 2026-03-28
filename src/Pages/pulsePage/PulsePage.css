@@ -1,0 +1,239 @@
+/* Layout & Container */
+.pulse-page-wrapper {
+  width: 100%;
+  background-color: #ffffff;
+  padding-bottom: 80px;
+}
+
+.pulse-page-container {
+  /* max-width: 1200px; */
+  margin: 0 80px;
+  padding: 0 16px;
+  padding-top: 32px;
+}
+
+@media (max-width: 768px) {
+  .pulse-page-container {
+    /* padding: 0 32px; */
+    margin: 0 20px;
+  }
+}
+
+/* Typography Specifications */
+
+/* Heading 2 -> Mobile: 38px, Desktop: 48px, Weight: 700 */
+.pulse-page-heading {
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--primary-text-color);
+  margin: 0;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .pulse-page-heading {
+    font-size: 48px;
+  }
+}
+
+/* Subheading -> Size: 24px, Weight: 400 (Card Titles) */
+.pulse-page-subheading {
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--primary-text-color);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Normal Text -> Size: 14px, Weight: 400 */
+.pulse-page-normal-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--primary-text-color);
+}
+
+/* Breadcrumbs */
+.pulse-page-breadcrumbs {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #a0a0a0;
+  margin-bottom: 32px;
+}
+
+.pulse-page-arrow {
+  margin: 0 8px;
+  font-size: 10px;
+}
+
+.pulse-page-current {
+  color: var(--primary-red-color);
+}
+
+/* Header Area */
+.pulse-page-header-area {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+  .pulse-page-header-area {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.pulse-page-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .pulse-page-controls {
+    width: auto;
+    justify-content: flex-end;
+  }
+}
+
+.pulse-page-filter {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.pulse-page-filter-label {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #a0a0a0;
+}
+
+.pulse-page-filter-value {
+  color: var(--primary-text-color);
+}
+
+.pulse-page-icon {
+  color: var(--primary-text-color);
+}
+
+/* Search Button (Mobile Only in design, hid on desktop for cleanliness or adapt as needed) */
+.pulse-page-search-btn {
+  background-color: var(--primary-red-color);
+  border: none;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  /* NO BORDER RADIUS */
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.pulse-page-search-btn:hover {
+  background-color: #5c0810;
+}
+
+@media (min-width: 768px) {
+  .pulse-page-search-btn {
+    display: none; /* Hide on desktop as per standard design flow, or remove this query to keep it */
+  }
+}
+
+/* News Grid */
+.pulse-page-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  margin-bottom: 64px;
+}
+
+@media (min-width: 768px) {
+  .pulse-page-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 64px 32px;
+  }
+}
+
+/* News Card */
+.pulse-page-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pulse-page-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/2;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+
+.pulse-page-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Badge (LATEST NEWS) */
+.pulse-page-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background-color: var(--primary-red-color);
+  color: #ffffff;
+  padding: 6px 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 10;
+}
+
+/* Card Content */
+.pulse-page-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pulse-page-date {
+  color: #a0a0a0;
+  margin: 0;
+}
+
+.pulse-page-title {
+  margin: 0;
+}
+
+/* Show More Button */
+.pulse-page-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.pulse-page-show-more-btn {
+  background-color: var(--primary-red-color);
+  color: #ffffff;
+  border: none;
+  padding: 16px 48px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+  /* Constraints Enforcement */
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.pulse-page-show-more-btn:hover {
+  background-color: #5c0810;
+}

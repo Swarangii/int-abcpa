@@ -41,12 +41,11 @@ const Profile = () => {
         {/* Breadcrumbs - Desktop Only */}
         <motion.div variants={itemVariants} className="breadcrumbs">
           <span className="bc-link">HOME</span>
-          <span className="bc-separator">•</span>
+          <span className="bc-separator">▸</span>
           <span className="bc-current">MY ACCOUNT</span>
         </motion.div>
 
         {/* Page Title */}
-        
 
         <div className="account-layout">
             <div className="side-content">
