@@ -70,10 +70,9 @@
 
 .btn-edit, .btn-remove {
   padding: 0.4rem 1.2rem;
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   letter-spacing: 0.5px;
-  border-radius: 2px;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -158,7 +157,7 @@
 
 .add-icon {
   fill: #8B151A;
-  color: white; /* Inverts the plus to white inside the red circle */
+  color: white;
 }
 
 /* Form Styles */
@@ -198,17 +197,16 @@
   gap: 1.5rem;
 }
 
-/* Reusing some input styles defined in previous files, but adding them here for safety if you keep CSS scoped */
 .form-group {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.form-group label {
+/* .form-group label {
   font-size: 0.8rem;
   color: #6C757D;
-}
+} */
 
 .form-group input {
   width: 100%;

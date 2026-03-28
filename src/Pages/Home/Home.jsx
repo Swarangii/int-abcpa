@@ -841,6 +841,10 @@ const [activeSpaceTab, setActiveSpaceTab] = useState('Stage');
             className="insider-form" 
             onSubmit={(e) => e.preventDefault()}
             variants={fadeInUp}
+
+
+
+             
           >
             <input 
               type="email" 
