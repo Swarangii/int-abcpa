@@ -8,8 +8,8 @@
 }
 
 .std-page-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
+  /* max-width: 1200px; */
+  margin: 0 80px;
   padding: 40px 20px;
   font-family: "Oxygen", sans-serif;
   color: var(--st-text-main);
@@ -30,7 +30,7 @@
 /* --- Main Layout Grid --- */
 .std-main-grid {
   display: grid;
-  grid-template-columns: 1.8fr 1fr;
+  grid-template-columns: 2.8fr 1fr;
   grid-template-areas: 
     "banner info"
     "about info"
@@ -141,10 +141,10 @@
 .std-btn-book:hover { background-color: #5c080f; }
 
 .std-about-area h2, .std-artists-area h2 {
-  font-size: 32px;
-  color: #555;
+  font-size: 48px;
+  color: #545454;
   margin-bottom: 25px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .std-about-area p {
@@ -160,12 +160,14 @@
 
 .std-artists-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(150px, max-content));
   gap: 30px;
 }
-
-.std-artist-img-wrapper {
+.std-artist-card {
   width: 100%;
+}
+.std-artist-img-wrapper {
+  width: 150px;
   aspect-ratio: 1 / 1;
   overflow: hidden;
   margin-bottom: 15px;
@@ -231,5 +233,8 @@
     height: 100px;
     margin-bottom: 0;
     flex-shrink: 0;
+  }
+  .std-page-wrapper{
+    margin: 0 20px;
   }
 }

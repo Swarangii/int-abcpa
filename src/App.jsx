@@ -23,6 +23,7 @@ import InitiativesPage from "./Pages/initiative/InitiativesPage";
 import InitiativeInnerPage from "./Pages/initiative-inner/InitiativeInnerPage";
 import PulsePage from "./Pages/pulsePage/PulsePage";
 import BlogPage from "./Pages/blogpage/BlogPage";
+import Leadership from "./Pages/leadership/Leadership";
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
       <Route path="/initiativeinner" element={<InitiativeInnerPage/>} />
       <Route path="/pulsePage" element={<PulsePage/>} />
       <Route path="/blogPage" element={<BlogPage/>} />
+      <Route path="/leadership" element={<Leadership/>} />
       </Route>
 
       {/* Pages WITHOUT Navbar + Footer */}

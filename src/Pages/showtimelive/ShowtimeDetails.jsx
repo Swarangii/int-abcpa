@@ -3,7 +3,9 @@ import { motion } from 'framer-motion';
 import { MapPin, Phone, Instagram } from 'lucide-react';
 import './ShowtimeDetails.css';
 import show1 from "../../../public/assets/show-1.png"
+import show2 from "../../../public/assets/show-2.png"
 import bookmyshowLogo from "../../../public/showtime/bookmyshow.png"
+import artist from "../../../public/showtime/artist.png"
 
 
 
@@ -19,10 +21,36 @@ const showData = {
   address: "INTABCPA, 38, Dadi Seth Lane, Babulnath, Mumbai 400007, India",
   phone: "8657893038",
   artists: [
-    { id: 1, name: "Clint Valladares", role: "Actor, director, writer, producer", image: "/assets/artist1.jpg" },
-    { id: 2, name: "Dr. N. Rajan", role: "Violin", image: "/assets/artist2.jpg" },
-    { id: 3, name: "Clint Valladares", role: "Actor, director, writer, producer", image: "/assets/artist3.jpg" }
+    { id: 1, name: "Clint Valladares", role: "Actor, director, writer, producer", image: artist },
+    { id: 2, name: "Dr. N. Rajan", role: "Violin", image: artist },
+    { id: 3, name: "Clint Valladares", role: "Actor, director, writer, producer", image: artist }
   ]
+};
+const topEvents = [
+  {
+    id: 1,
+    title: 'Romeo & Juliet',
+    description: 'When Romeo of the Montagues locks eyes with Juliet of the Capulets, it is love at first sight .. and war at first breath. Their forbidden romance rips through Bollywood backlots, disco-lit nights and tapori street showdowns - bold enough to set an entire city on fire.',
+    time: '15 Jan, 2025 9 PM - 11 PM',
+    image: show1
+  },
+  {
+    id: 2,
+    title: 'Zen Katha',
+    description: 'A fascinating story of Bodhidharma, a Prince from the ancient kingdom of Kanchi,who was the true founder of Zen and the Martial Arts, as we know them today.',
+    time: '15 Jan, 2025 9 PM - 11 PM',
+    image: show2 
+  }
+];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 80, damping: 15 } }
 };
 
 // --- ANIMATION VARIANTS ---
@@ -132,7 +160,22 @@ const ShowtimeDetails = () => {
             ))}
           </div>
         </motion.div>
-
+        <motion.div className="st-grid st-margin-bottom" variants={containerVariants} initial="hidden" animate="visible">
+                {topEvents.map((event) => (
+                  <motion.div className="st-card" key={event.id} variants={cardVariants}>
+                    <div className="st-card-image"><img src={event.image} alt={event.title} /></div>
+                    <div className="st-card-content">
+                      <h2>{event.title}</h2>
+                      <p className="st-description">{event.description}</p>
+                      <span className="st-time">{event.time}</span>
+                      <div className="st-card-actions">
+                        <button className="st-btn-outline">MORE INFO</button>
+                        <button className="nav-btn-book">BOOK NOW</button>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
       </motion.div>
     </div>
   );

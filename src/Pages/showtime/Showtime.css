@@ -154,7 +154,7 @@
 .st-date-btn:hover { background-color: #EED7D7; }
 
 /* Active Date State */
-.st-date-btn.active {
+.st-date-btn.active{
   background-color: var(--st-maroon);
   color: white;
 }
@@ -163,10 +163,14 @@
   font-size: 18px;
   font-weight: 700;
 }
-
-.st-day { font-size: 12px; }
-.st-date-num { font-size: 24px; font-weight: 700; line-height: 1.2; }
-.st-month { font-size: 12px; }
+.st-date-btn.active .st-day,
+.st-date-btn.active .st-date-num,
+.st-date-btn.active .st-month {
+  color: white;
+}
+.st-day { font-size: 12px; font-weight: 700; color: #545454;}
+.st-date-num { font-size: 20px; font-weight: 700; line-height: 1.2; }
+.st-month { font-size: 12px; font-weight: 700;}
 
 /* --- Event Cards Grid --- */
 .st-grid {
@@ -205,7 +209,7 @@
 }
 
 .st-description {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.6;
   color: var(--st-text-light);
   margin-bottom: 20px;
@@ -214,7 +218,7 @@
 .st-time {
   display: block;
   font-size: 12px;
-  color: #888;
+  color: #545454;
   margin-bottom: 25px;
 }
 
@@ -226,7 +230,7 @@
 
 .st-card-actions button {
   padding: 12px 24px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -467,18 +471,20 @@ line-height: 17px; /* 121.429% */
 }
 
 .all-dropdown-item {
-  padding: 16px 20px;
-  font-size: 13px;
+  padding: 16px 24px;
+  font-size: 12px;
   font-weight: 600;
-  color: var(--st-text-main);
+  letter-spacing: 3.6px;
+  text-transform: uppercase;
+  color: #545454;
   cursor: pointer;
   transition: all 0.2s ease;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  margin: 0 10px;
 }
 
 /* The Figma Hover/Active state (Light pink BG, Maroon text) */
 .all-dropdown-item:hover {
-  background-color: var(--st-light-pink);
+  background-color: #F2E6E6; 
   color: var(--st-maroon);
+
 }
