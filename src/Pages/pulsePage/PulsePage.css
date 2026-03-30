@@ -8,8 +8,8 @@
 .pulse-page-container {
   /* max-width: 1200px; */
   margin: 0 80px;
-  padding: 0 16px;
-  padding-top: 32px;
+  /* padding: 0 16px; */
+  /* padding-top: 32px; */
 }
 
 @media (max-width: 768px) {
@@ -38,26 +38,31 @@
 
 /* Subheading -> Size: 24px, Weight: 400 (Card Titles) */
 .pulse-page-subheading {
-  font-size: 24px;
-  font-weight: 400;
-  color: var(--primary-text-color);
-  line-height: 1.4;
-  margin: 0;
+  color: #545454;
+font-family: Oxygen;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 28px; /* 140% */
 }
 
 /* Normal Text -> Size: 14px, Weight: 400 */
 .pulse-page-normal-text {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   color: var(--primary-text-color);
 }
 
 /* Breadcrumbs */
 .pulse-page-breadcrumbs {
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #a0a0a0;
-  margin-bottom: 32px;
+  color: #545454;
+font-family: Oxygen;
+font-size: 9px;
+font-style: normal;
+font-weight: 400;
+line-height: 22px; /* 244.444% */
+letter-spacing: 2.7px;
+text-transform: uppercase;
 }
 
 .pulse-page-arrow {
@@ -66,7 +71,14 @@
 }
 
 .pulse-page-current {
-  color: var(--primary-red-color);
+  color: #7D0B15;
+font-family: Oxygen;
+font-size: 9px;
+font-style: normal;
+font-weight: 400;
+line-height: 22px; /* 244.444% */
+letter-spacing: 2.7px;
+text-transform: uppercase;
 }
 
 /* Header Area */
@@ -109,7 +121,7 @@
 .pulse-page-filter-label {
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #a0a0a0;
+  color: #545454;
 }
 
 .pulse-page-filter-value {
@@ -204,7 +216,7 @@
 }
 
 .pulse-page-date {
-  color: #a0a0a0;
+  color: #545454;
   margin: 0;
 }
 
@@ -232,8 +244,63 @@
   /* Constraints Enforcement */
   border-radius: 0;
   box-shadow: none;
+  font-weight: 700;
 }
 
 .pulse-page-show-more-btn:hover {
-  background-color: #5c0810;
+  background-color: #A4895D;
+}
+
+
+/* Container holding the filter to anchor the absolute dropdown */
+.pulse-page-filter-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Make the filter look clickable */
+.pulse-page-filter {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  /* Keep your existing padding/border styles here */
+}
+
+/* Dropdown Menu Box */
+.pulse-page-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  margin: 0;
+  padding: 10px 0; 
+  list-style: none;
+  z-index: 100;
+}
+
+/* Dropdown Items */
+.pulse-page-dropdown-item {
+  padding: 16px 24px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3.6px;
+  text-transform: uppercase;
+  color: #545454;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 0 10px; 
+}
+
+.pulse-page-dropdown-item:hover {
+  background-color: #F2E6E6; 
+  color: #7C1B1F;
+}
+
+/* Highlight the currently selected year */
+.pulse-page-dropdown-item.active {
+  font-weight: bold;
+ background-color: #F2E6E6; 
+  color: #7C1B1F;
 }

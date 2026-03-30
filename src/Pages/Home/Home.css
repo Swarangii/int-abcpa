@@ -321,6 +321,7 @@ body {
   .profile-content p{
     text-align: center;
   }
+
 }
 
 @media (max-width: 768px) {
@@ -354,6 +355,9 @@ gap: 26px;
     background-repeat: no-repeat;
     background-size: cover;
   } */
+   .container{
+    margin: 0 20px;
+   }
 }
 
 .saga-mobile-icon {

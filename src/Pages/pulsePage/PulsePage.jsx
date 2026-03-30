@@ -1,67 +1,71 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Search } from 'lucide-react';
 import './PulsePage.css';
-
+import image from "../../../public/pulsepage/image.png"
 const newsData = [
   {
     id: 1,
     title: 'Through the looking glass with Freed a Theatre Group',
     date: 'Nov 04, 2022',
-    image: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=800&auto=format&fit=crop',
+    image: image,
     badge: 'LATEST NEWS',
   },
   {
     id: 2,
     title: 'Kerala to host 1st international Indie music festival from November 9',
     date: 'Nov 04, 2022',
-    image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800&auto=format&fit=crop',
+    image: image,
   },
   {
     id: 3,
     title: 'Temples used to give spiritual benefits to the market and get material ones in return',
     date: 'Nov 04, 2022',
-    image: 'https://images.unsplash.com/photo-1582765355150-13f5d5ccfb17?q=80&w=800&auto=format&fit=crop',
+    image: image,
   },
   {
     id: 4,
     title: 'The toughest part, is to carry a beloved classic\'s legacy forward in a different medium, says Feroz Abbas Khan',
     date: 'Nov 04, 2022',
-    image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop',
+    image: image,
   },
   {
     id: 5,
     title: 'Kerala to host 1st international Indie music festival from November 9',
     date: 'Nov 04, 2022',
-    image: 'https://images.unsplash.com/photo-1507676184212-d0330a151f15?q=80&w=800&auto=format&fit=crop',
+    image: image,
   },
   {
     id: 6,
     title: 'Temples used to give spiritual benefits to the market and get material ones in return',
     date: 'Nov 04, 2022',
-    image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?q=80&w=800&auto=format&fit=crop',
+    image: image,
   },
   {
     id: 7,
     title: 'The toughest part, is to carry a beloved classic\'s legacy forward in a different medium, says Feroz Abbas Khan',
     date: 'Nov 04, 2022',
-    image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop',
+    image: image,
   },
   {
     id: 8,
     title: 'Kerala to host 1st international Indie music festival from November 9',
     date: 'Nov 04, 2022',
-    image: 'https://images.unsplash.com/photo-1478147427282-58a87a120781?q=80&w=800&auto=format&fit=crop',
+    image: image,
   },
   {
     id: 9,
     title: 'Temples used to give spiritual benefits to the market and get material ones in return',
     date: 'Nov 04, 2022',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop',
-  }
+    image: image }
 ];
 
 export default function PulsePage() {
+  const [selectedYear, setSelectedYear] = useState('2024');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  
+  // Available years for the dropdown
+  const years = ['2024', '2023', '2022', '2021', '2020'];
   const fadeUpVariant = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
@@ -89,10 +93,38 @@ export default function PulsePage() {
           <h2 className="pulse-page-heading">What's News</h2>
           
           <div className="pulse-page-controls">
-            <div className="pulse-page-filter">
-              <span className="pulse-page-filter-label pulse-page-normal-text">YEAR</span>
-              <span className="pulse-page-filter-value pulse-page-normal-text">2024</span>
-              <ChevronDown size={16} className="pulse-page-icon" />
+            {/* Dropdown Wrapper */}
+            <div className="pulse-page-filter-wrapper">
+              <div 
+                className="pulse-page-filter"
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              >
+                <span className="pulse-page-filter-label pulse-page-normal-text">YEAR</span>
+                <span className="pulse-page-filter-value pulse-page-normal-text">{selectedYear}</span>
+                <ChevronDown 
+                  size={16} 
+                  className={`pulse-page-icon ${isDropdownOpen ? 'rotate' : ''}`} 
+                  style={{ transition: 'transform 0.3s ease', transform: isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                />
+              </div>
+
+              {/* Dropdown Menu */}
+              {isDropdownOpen && (
+                <div className="pulse-page-dropdown-menu">
+                  {years.map((year) => (
+                    <div 
+                      key={year}
+                      className={`pulse-page-dropdown-item pulse-page-normal-text ${selectedYear === year ? 'active' : ''}`}
+                      onClick={() => {
+                        setSelectedYear(year);
+                        setIsDropdownOpen(false);
+                      }}
+                    >
+                      {year}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
             
             {/* Search Button (Visible primarily on mobile as per design) */}
