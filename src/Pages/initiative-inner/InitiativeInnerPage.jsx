@@ -2,6 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Play } from 'lucide-react';
 import './InitiativeInnerPage.css';
+import image from "../../../public/initiative/innerImg.png"
+import image1 from "../../../public/initiative/innerImg1.png"
+import playIcon from "../../../public/initiative/play-btn.svg"
 
 export default function InitiativeInnerPage() {
   const fadeUpVariant = {
@@ -36,7 +39,7 @@ export default function InitiativeInnerPage() {
           {/* Left: Poster Image */}
           <motion.div variants={fadeUpVariant} className="initiative-inner-image-wrapper">
             <img 
-              src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800&auto=format&fit=crop" 
+              src={image}
               alt="Virasat Vintage Vibes Poster" 
               className="initiative-inner-poster-img"
             />
@@ -74,13 +77,13 @@ export default function InitiativeInnerPage() {
           
           <div className="initiative-inner-video-wrapper">
             <img 
-              src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1920&auto=format&fit=crop" 
+              src={image1}
               alt="Glimpse of Virasat Video Thumbnail" 
               className="initiative-inner-video-img"
             />
             {/* Square Play Button to respect "no border-radius" constraint */}
             <button className="initiative-inner-play-btn">
-              <Play size={28} fill="var(--primary-text-color)" color="var(--primary-text-color)" />
+              <img src={playIcon} alt="playicon" />
             </button>
           </div>
         </motion.div>
