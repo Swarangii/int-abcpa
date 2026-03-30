@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Instagram } from 'lucide-react';
 import './ShowtimeDetails.css';
@@ -6,8 +6,25 @@ import show1 from "../../../public/assets/show-1.png"
 import show2 from "../../../public/assets/show-2.png"
 import bookmyshowLogo from "../../../public/showtime/bookmyshow.png"
 import artist from "../../../public/showtime/artist.png"
+import location from "../../../public/showtime/location.svg"
+import call from "../../../public/showtime/call.svg"
 
+// --- CUSTOM HOOK FOR RESPONSIVE JSX ---
+const useMediaQuery = (query) => {
+  const [matches, setMatches] = useState(false);
 
+  useEffect(() => {
+    const media = window.matchMedia(query);
+    if (media.matches !== matches) {
+      setMatches(media.matches);
+    }
+    const listener = () => setMatches(media.matches);
+    window.addEventListener('resize', listener);
+    return () => window.removeEventListener('resize', listener);
+  }, [matches, query]);
+
+  return matches;
+};
 
 // --- MOCK DATA ---
 const showData = {
@@ -68,6 +85,7 @@ const fadeUp = {
 };
 
 const ShowtimeDetails = () => {
+  const isTabletOrMobile = useMediaQuery('(max-width: 991px)');
   return (
     <div className="std-page-wrapper">
       
@@ -116,11 +134,11 @@ const ShowtimeDetails = () => {
             <div className="std-info-group">
               <label>Contact Details</label>
               <div className="std-contact-item">
-                <MapPin size={16} className="std-icon" />
+                <img src={location}></img>
                 <p>{showData.address}</p>
               </div>
               <div className="std-contact-item">
-                <Phone size={16} className="std-icon" />
+                <img src={call}></img>
                 <p>{showData.phone}</p>
               </div>
             </div>
@@ -160,22 +178,54 @@ const ShowtimeDetails = () => {
             ))}
           </div>
         </motion.div>
-        <motion.div className="st-grid st-margin-bottom" variants={containerVariants} initial="hidden" animate="visible">
-                {topEvents.map((event) => (
-                  <motion.div className="st-card" key={event.id} variants={cardVariants}>
-                    <div className="st-card-image"><img src={event.image} alt={event.title} /></div>
-                    <div className="st-card-content">
-                      <h2>{event.title}</h2>
-                      <p className="st-description">{event.description}</p>
-                      <span className="st-time">{event.time}</span>
-                      <div className="st-card-actions">
-                        <button className="st-btn-outline">MORE INFO</button>
-                        <button className="nav-btn-book">BOOK NOW</button>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
+        
+      </motion.div>
+      {/* ... Previous code ... */}
+      <h2 className='st-bottom-heading'>You may also like</h2>
+      
+      <motion.div className="st-grid st-margin-bottom" variants={containerVariants} initial="hidden" animate="visible">
+        
+        {isTabletOrMobile ? (
+          /* =========================================
+             MOBILE / TABLET: RENDER ONLY ONE CARD
+             ========================================= */
+          <motion.div className="st-card-mobile-variant" key={`mob-${topEvents[0].id}`} variants={cardVariants}>
+            <div className="st-mob-image-wrapper">
+              <img src={topEvents[0].image} alt={topEvents[0].title} />
+            </div>
+            <div className="st-mob-card-content">
+              <h2>{topEvents[0].title}</h2>
+              <p className="st-mob-description">{topEvents[0].description}</p>
+              <span className="st-mob-time">{topEvents[0].time}</span>
+              
+              <div className="st-mob-card-actions">
+                <button className="st-mob-btn-outline">MORE INFO</button>
+                <button className="st-mob-btn-book">BOOK NOW</button>
+              </div>
+            </div>
+          </motion.div>
+        ) : (
+          /* =========================================
+             DESKTOP: LOOP THROUGH ALL CARDS
+             ========================================= */
+          topEvents.map((event) => (
+            <motion.div className="st-card" key={`desk-${event.id}`} variants={cardVariants}>
+              <div className="st-card-image">
+                <img src={event.image} alt={event.title} />
+              </div>
+              <div className="st-card-content">
+                <h2>{event.title}</h2>
+                <p className="st-description">{event.description}</p>
+                <span className="st-time">{event.time}</span>
+                <div className="st-card-actions">
+                  <button className="st-btn-outline">MORE INFO</button>
+                  <button className="nav-btn-book">BOOK NOW</button>
+                </div>
+              </div>
+            </motion.div>
+          ))
+        )}
+
       </motion.div>
     </div>
   );

@@ -1,7 +1,7 @@
 /* --- Base Variables (Reusing your theme) --- */
 :root {
   --st-maroon: #7D0B15;
-  --st-light-pink: #F8EDED;
+  --st-light-pink: #F5EDED;
   --st-text-main: #545454;
   --st-text-light: #545454;
   --st-border-color: #EAEAEA;
@@ -10,7 +10,7 @@
 .std-page-wrapper {
   /* max-width: 1200px; */
   margin: 0 80px;
-  padding: 40px 20px;
+  /* padding: 40px 20px; */
   font-family: "Oxygen", sans-serif;
   color: var(--st-text-main);
 }
@@ -35,7 +35,7 @@
     "banner info"
     "about info"
     "artists info";
-  gap: 40px 50px;
+  gap: 40px 36px;
 }
 
 .std-banner-area { grid-area: banner; }
@@ -61,25 +61,30 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 25px;
+  /* margin-bottom: 25px; */
 }
 
-.std-info-group {
+/* .std-info-group {
   margin-bottom: 25px;
-}
+} */
 
 .std-info-group label, .std-booking-section label {
   display: block;
-  font-size: 11px;
-  color: #888;
-  margin-bottom: 8px;
+  color: #545454;
+font-family: Oxygen;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 22px; /* 183.333% */
 }
 
 .std-maroon-text {
-  color: var(--st-maroon);
-  font-size: 14px;
-  font-weight: 500;
-  margin: 0;
+  color: #7D0B15;
+font-family: Oxygen;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
 }
 
 .std-icon-btn {
@@ -101,14 +106,16 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  margin-bottom: 12px;
+  /* margin-bottom: 12px; */
 }
 
 .std-contact-item p {
-  font-size: 13px;
-  color: var(--st-maroon);
-  margin: 0;
-  line-height: 1.5;
+  color: #7D0B15;
+font-family: Oxygen;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 133.5%; /* 18.69px */
 }
 
 .std-icon {
@@ -116,31 +123,37 @@
   flex-shrink: 0;
   margin-top: 2px;
 }
-
+/* 
 .std-booking-section {
   margin-top: 40px;
-}
+} */
 
 .std-bms-logo {
-  margin-bottom: 25px;
+  margin-bottom: 5px;
+  
 }
-
+.std-bms-logo img{
+  width: 171px;
+height: 57px;
+aspect-ratio: 3/1;
+}
 .std-btn-book {
   background-color: var(--st-maroon);
   color: white;
   border: none;
-  width: 100%;
-  padding: 16px;
-  font-size: 13px;
+  width: auto; /* 🔥 change this */
+  padding: 16px 24px; /* horizontal padding thoda control */
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 2px;
   cursor: pointer;
   transition: background-color 0.2s;
+  display: inline-block;
 }
 
 .std-btn-book:hover { background-color: #5c080f; }
 
-.std-about-area h2, .std-artists-area h2 {
+.std-about-area h2 {
   font-size: 48px;
   color: #545454;
   margin-bottom: 25px;
@@ -151,13 +164,20 @@
   font-size: 14px;
   line-height: 1.8;
   color: var(--st-text-light);
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .std-artists-area {
-  margin-top: 20px;
+  margin-top: 9px;
 }
-
+.std-artists-area h2{ color: #545454;
+font-family: Oxygen;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+  margin: 0 0 24px 0;
+}
 .std-artists-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, max-content));
@@ -192,6 +212,102 @@
   color: var(--st-maroon);
   margin: 0;
 }
+.st-bottom-heading{
+  color: #545454;
+font-family: Oxygen;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+margin: 128px 0 24px 0;
+
+}
+/* =========================================
+   MOBILE VARIANT CLASSES
+   ========================================= */
+.st-card-mobile-variant {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.st-mob-image-wrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.st-mob-card-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.st-mob-card-content h2 {
+  font-size: 20px;
+  color: #333;
+  margin: 0;
+  font-weight: 600;
+}
+
+.st-mob-description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.st-mob-time {
+  font-size: 12px;
+  color: #555;
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+/* The crucial part: Button alignment from your Figma */
+.st-mob-card-actions {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  margin-top: auto;
+}
+
+.st-mob-btn-outline,
+.st-mob-btn-book {
+  flex: 1; /* Makes them split 50/50 exactly */
+  padding: 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.st-mob-btn-outline {
+  background: transparent;
+  color: #7D0B15; /* Matching your maroon accent */
+  border: 1px solid #c8a2a6; /* Softer outline color */
+}
+
+.st-mob-btn-book {
+  background: #7D0B15;
+  color: #ffffff;
+  border: 1px solid #7D0B15;
+}
+
+.st-mob-btn-outline:active {
+  background: #fdf5f5;
+}
+
+.st-mob-btn-book:active {
+  background: #5a070f;
+}
+
 
 /* =========================================
    RESPONSIVE DESIGN (MOBILE LAYOUT)
@@ -213,15 +329,23 @@
     padding: 25px;
   }
 
-  .std-about-area h2, .std-artists-area h2 {
+  .std-about-area h2 {
     font-size: 26px;
   }
-
+  .std-artists-area{
+    margin: 0;
+  }
+  .st-bottom-heading{
+    margin: 44px 0 16px 0;
+  }
   .std-artists-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-
+  /* Hides all artist cards from the 3rd one onwards */
+.std-artist-card:nth-child(n+3) {
+  display: none;
+}
   .std-artist-card {
     display: flex;
     align-items: center;
@@ -236,5 +360,6 @@
   }
   .std-page-wrapper{
     margin: 0 20px;
+    padding: 0;
   }
 }

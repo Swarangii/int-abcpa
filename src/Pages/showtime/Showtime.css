@@ -403,7 +403,7 @@ line-height: 17px; /* 121.429% */
   }
 
   .st-card-actions {
-    flex-direction: column; 
+    flex-direction: row; 
   }
   
   .st-card-actions button {
