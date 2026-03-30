@@ -17,15 +17,15 @@
 }
 
 .ed-breadcrumbs {
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 2px;
-  text-transform: uppercase;
   color: #545454;
-  margin-bottom: 25px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+font-family: Oxygen;
+font-size: 9px;
+font-style: normal;
+font-weight: 400;
+line-height: 22px; /* 244.444% */
+letter-spacing: 2.7px;
+text-transform: uppercase;
+margin: 9px 0;
 }
 
 .ed-sep {
@@ -61,7 +61,7 @@
 }
 
 .ed-subtitle {
-  font-size: 24px;
+  font-size: 48px;
   font-weight: 700;
   color: var(--primary-text-color);
   margin: 0 0 30px 0;
@@ -109,6 +109,7 @@
   display: flex;
   align-items: center;
   width: 100%;
+  margin-bottom: 66px;
   gap: 20px;
 }
 
@@ -163,7 +164,7 @@
 @media (max-width: 900px) {
   
   .ed-page-wrapper {
-    margin: 0 20px;
+    margin: 0 0px;
     /* padding: 20px 15px 60px 15px; */
   }
 
@@ -174,8 +175,7 @@
   }
 
   .ed-breadcrumbs {
-    margin-top: 15px; /* Adds space above breadcrumbs when below image */
-    margin-bottom: 0;
+    margin: 0 20px 15px 20px;
     font-size: 10px; /* Scaling down breadcrumbs slightly for small screens */
   }
 
@@ -186,9 +186,22 @@
   /* Strict Mobile Heading Constraint */
   .ed-title {
     font-size: 38px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
+    /* margin: 0 20px 0px 20px; */
+
   }
 
+  .ed-content-section{
+    margin: 0 20px 0px 20px;
+  }
+  .ed-gallery-section{
+    margin: 0 20px 0px 20px;
+
+  }
+  .ed-gallery-item{
+    width: 400px;
+height: 278px;
+  }
   .ed-paragraph {
     text-align: left; /* Better readability on narrow screens */
   }
@@ -199,6 +212,7 @@
   }
 
   .ed-subtitle {
+    font-size: 38px;
     text-align: left;
     width: 100%;
   }
@@ -219,7 +233,7 @@
   }
 
   .ed-gallery-item {
-    flex: 0 0 85%; /* Shows 1 full image and a peek of the next */
+    flex: 0 0 80%; /* Shows 1 full image and a peek of the next */
     scroll-snap-align: center;
   }
 

@@ -72,15 +72,17 @@ const ShowtimeWasDetail = () => {
         </motion.h1>
 
         <motion.div className="ed-meta-box" variants={fadeUp}>
-          <p className="ed-meta-text">{eventData.meta}</p>
+          <p className="ed-meta-text ed-bold">{eventData.meta}</p>
           <p className="ed-credit-text">
-            <span className="ed-bold">Adapted by:</span> {eventData.credits.adapted}
+            Adapted by: 
+            <span className="ed-bold"> {eventData.credits.adapted}</span> 
           </p>
           <p className="ed-credit-text">
-            <span className="ed-bold">Directed by:</span> {eventData.credits.directed}
+            Directed by: 
+            <span className="ed-bold"> {eventData.credits.directed}</span> 
           </p>
-          <p className="ed-credit-text">
-            <span className="ed-bold">Cast:</span> {eventData.credits.cast}
+          <p className="ed-credit-text">Cast: 
+            <span className="ed-bold"> {eventData.credits.cast}</span> 
           </p>
         </motion.div>
 
