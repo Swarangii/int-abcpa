@@ -8,7 +8,39 @@
   font-family: "Oxygen", sans-serif;
   overflow-x: hidden;
 }
+.showtime-was-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 
+  color: #545454;
+  font-family: Oxygen;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+/* HOME */
+.showtime-was-link {
+  color: #545454;
+  cursor: pointer;
+}
+
+/* Arrow */
+.showtime-was-separator {
+  color: #7D0B15;
+  font-size: 8px;
+}
+
+/* Current page */
+.showtime-was-current {
+  color: #7D0B15;
+  font-weight: 500;
+}
 /* --- HEADER --- */
 .stw-header {
   display: flex;
@@ -50,7 +82,7 @@
 
 .stw-dropdown-container {
   position: relative;
-  min-width: 120px;
+  min-width: 100%;
 }
 
 .stw-dropdown-header {
@@ -77,28 +109,29 @@
   position: absolute;
   top: 100%;
   left: 0;
-  width: max-content;
-  min-width: 100%;
-  background: #ffffff;
-  border: 1px solid #EAEAEA;
-  margin: 10px 0 0 0;
-  padding: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  margin: 0;
+  padding: 10px 0; 
   list-style: none;
   z-index: 100;
-  /* NO border-radius, NO box-shadow per constraints */
 }
 
 .stw-dropdown-item {
-  padding: 12px 15px;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--primary-text-color);
+  padding: 16px 24px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3.6px;
+  text-transform: uppercase;
+  color: #545454;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
+  margin: 0 10px;
 }
 
 .stw-dropdown-item:hover {
-  background-color: #f5f5f5;
+  background-color: #F2E6E6; 
   color: var(--primary-red-color);
 }
 
@@ -185,8 +218,8 @@
   background-color: transparent;
   border: 1px solid var(--primary-red-color);
   color: var(--primary-red-color);
-  padding: 12px 24px;
-  font-size: 12px;
+  padding: 10px 45px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -278,5 +311,6 @@
   }
   .stw-filter-group{
     flex-direction: column;
+    padding: 0;
   }
 }
