@@ -1,17 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './AuditoriumPage.css'; // Updated CSS import
+import image from "../../../public/auditorium/image.png"
 
 const structuralImages = [
-  { id: 1, title: 'Stage dimensions', src: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop' },
-  { id: 2, title: 'Plan of Auditorium', src: 'https://images.unsplash.com/photo-1507676184212-d0330a151f15?q=80&w=800&auto=format&fit=crop' },
-  { id: 3, title: 'The INT ABCPA Auditorium', src: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop' },
-  { id: 4, title: 'INT ABCPA The Art 1', src: 'https://images.unsplash.com/photo-1582765355150-13f5d5ccfb17?q=80&w=800&auto=format&fit=crop' },
-  { id: 5, title: 'INT ABCPA Memorial Events', src: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=800&auto=format&fit=crop' },
-  { id: 6, title: 'INT ABCPA Cafe', src: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop' },
-  { id: 7, title: 'INT ABCPA Box Office', src: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=800&auto=format&fit=crop' },
-  { id: 8, title: 'INT ABCPA Passage', src: 'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=800&auto=format&fit=crop' },
-  { id: 9, title: 'INT ABCPA Paradis', src: 'https://images.unsplash.com/photo-1478147427282-58a87a120781?q=80&w=800&auto=format&fit=crop' }
+  { id: 1, title: 'Stage dimensions', src: image },
+  { id: 2, title: 'Plan of Auditorium', src: image },
+  { id: 3, title: 'The INT ABCPA Auditorium', src: image },
+  { id: 4, title: 'INT ABCPA The Art 1', src: image },
+  { id: 5, title: 'INT ABCPA Memorial Events', src: image },
+  { id: 6, title: 'INT ABCPA Cafe', src: image},
+  { id: 7, title: 'INT ABCPA Box Office', src: image },
+  { id: 8, title: 'INT ABCPA Passage', src: image },
+  { id: 9, title: 'INT ABCPA Paradis', src: image }
 ];
 
 export default function AuditoriumPage() {
@@ -35,7 +36,7 @@ export default function AuditoriumPage() {
       <div className="auditorium-page-hero">
         <div 
           className="auditorium-page-hero-bg"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1507676184212-d0330a151f15?q=80&w=1920&auto=format&fit=crop')" }}
+          style={{ backgroundImage: "url('../../../public/auditorium/banner.png')" }}
         />
         <div className="auditorium-page-breadcrumbs">
           HOME <span>▸</span> SPACES <span>▸</span> ADITYA BIRLA THEATRE
@@ -62,7 +63,7 @@ export default function AuditoriumPage() {
         >
           <div className="auditorium-page-about-image-wrapper">
             <img 
-              src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop" 
+              src={image} 
               alt="Auditorium Seating" 
               className="auditorium-page-about-img"
             />
@@ -105,7 +106,7 @@ export default function AuditoriumPage() {
           </div>
           <div className="auditorium-page-highlights-image-wrapper">
             <img 
-              src="https://images.unsplash.com/photo-1507676184212-d0330a151f15?q=80&w=800&auto=format&fit=crop" 
+              src={image}  
               alt="Highlights Auditorium" 
               className="auditorium-page-highlights-img"
             />
