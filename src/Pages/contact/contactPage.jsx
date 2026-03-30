@@ -121,7 +121,7 @@ export default function ContactPage() {
             <span className="contact-page-text">Email: corporate@intabcpa.com</span>
           </div>
         </motion.div>
-
+        <div className="divider-contact"></div>
         {/* Form Section */}
         <motion.div 
           className="contact-page-form-section"
