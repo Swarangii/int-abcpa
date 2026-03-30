@@ -135,9 +135,9 @@ line-height: 24px;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
-  .flashback-breadcrumbs{
+  /* .flashback-breadcrumbs{
     display: none;
-  }
+  } */
   .flashback-page{
     margin: 0px;
   }

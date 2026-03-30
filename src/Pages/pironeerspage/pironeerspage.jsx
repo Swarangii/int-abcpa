@@ -71,9 +71,16 @@ const pioneersData = [
   }
 ];
 
+
+const categories = [
+  "VETERAN ARTISTS",
+  "MODERN ARTISTS",
+  "EMERGING ARTISTS"
+];
 export default function PioneersPage() {
   const [activeId, setActiveId] = useState(1);
-
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+const [selectedCategory, setSelectedCategory] = useState("VETERAN ARTISTS");
   return (
     <div className="pioneers-page-wrapper">
       
@@ -93,12 +100,43 @@ export default function PioneersPage() {
         
         {/* Category Header */}
         <div className="pioneers-page-category-header">
-          <button className="pioneers-page-category-button">
-            <span className="pioneers-page-category-label">CATEGORIES</span>
-            <span className="pioneers-page-category-value">VETERAN ARTISTS</span>
-            <ChevronDown size={14} className="pioneers-page-icon-text" />
-          </button>
-        </div>
+  <div className="pioneers-page-category-dropdown-wrapper">
+
+    <button
+      className="pioneers-page-category-button"
+      onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+    >
+      <span className="pioneers-page-category-label">CATEGORIES</span>
+      <span className="pioneers-page-category-value">
+        {selectedCategory}
+      </span>
+      <ChevronDown
+        size={14}
+        className={`pioneers-page-icon-text ${
+          isDropdownOpen ? "rotate-icon" : ""
+        }`}
+      />
+    </button>
+
+    {isDropdownOpen && (
+      <div className="pioneers-page-category-dropdown">
+        {categories.map((item, index) => (
+          <div
+            key={index}
+            className="pioneers-page-category-item"
+            onClick={() => {
+              setSelectedCategory(item);
+              setIsDropdownOpen(false);
+            }}
+          >
+            {item}
+          </div>
+        ))}
+      </div>
+    )}
+
+  </div>
+</div>
 
         {/* DESKTOP GRID VIEW (Hidden on Mobile) */}
         <div className="pioneers-page-desktop-view">
@@ -126,9 +164,9 @@ export default function PioneersPage() {
                           <div className="pioneers-page-card-header">
                             <h3 className="pioneers-page-card-name">{pioneer.name}</h3>
                             {isActive ? (
-                              <ChevronDown size={18} className="pioneers-page-icon-text" />
+                              <ChevronDown size={24} className="pioneers-page-icon-text red" />
                             ) : (
-                              <ChevronRight size={18} className="pioneers-page-icon-muted" />
+                              <ChevronRight size={24} className="pioneers-page-icon-muted" />
                             )}
                           </div>
                           <p className="pioneers-page-card-role">{pioneer.role}</p>
