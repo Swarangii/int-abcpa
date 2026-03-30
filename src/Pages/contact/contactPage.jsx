@@ -5,6 +5,9 @@ import './ContactPage.css';
 import banner from "../../../public/contact/banner.png"
 import img from "../../../public/contact/img.png"
 import maskimg from "../../../public/auth-media/MaskImg.png"
+import location from "../../../public/assets/location_on.svg";
+import phone from "../../../public/assets/call.svg";
+import mail from "../../../public/assets/mark_email_unread.svg";
 
 export default function ContactPage() {
   const fadeUpVariant = {
@@ -18,7 +21,7 @@ export default function ContactPage() {
         
         {/* Breadcrumbs */}
         <div className="contact-page-breadcrumbs contact-page-text">
-          HOME <span className="contact-page-arrow">▸</span> <span className="contact-page-current">CONTACT</span>
+          HOME <span className="contact-page-arrow" style={{"color":"#7D0B15"}}>▸</span> <span className="contact-page-current">CONTACT</span>
         </div>
 
         {/* Hero Section */}
@@ -57,7 +60,7 @@ export default function ContactPage() {
             
             <div className="contact-page-details-list">
               <div className="contact-page-detail-item">
-                <MapPin size={20} className="contact-page-icon" />
+                <img src={location} alt="location" />
                 <div className="contact-page-text">
                   Indian National Theatre<br/>
                   Ratan House, Dadi Seth Road, Babulnath, Grant Road (W), Malabar Hill, Mumbai, Maharashtra 400007
@@ -65,7 +68,8 @@ export default function ContactPage() {
               </div>
               
               <div className="contact-page-detail-item">
-                <Phone size={20} className="contact-page-icon" />
+                                <img src={phone} alt="phone" />
+
                 <div className="contact-page-text">
                   Telephone<br/>
                   022 - XXXX XXXX (9:00 am - 10:00 pm)
@@ -73,7 +77,8 @@ export default function ContactPage() {
               </div>
 
               <div className="contact-page-detail-item">
-                <Phone size={20} className="contact-page-icon" />
+                                <img src={phone} alt="phone" />
+
                 <div className="contact-page-text">
                   Box Office<br/>
                   022 - XXXX XXXX (9:00 am - 10:00 pm)
@@ -81,7 +86,8 @@ export default function ContactPage() {
               </div>
 
               <div className="contact-page-detail-item">
-                <Mail size={20} className="contact-page-icon" />
+                                <img src={mail} alt="mail" />
+
                 <div className="contact-page-text">
                   Email: corporate@intabcpa.com
                 </div>
@@ -111,7 +117,7 @@ export default function ContactPage() {
             For press requests, interviews, or editorial collaborations
           </p>
           <div className="contact-page-media-email">
-            <Mail size={16} className="contact-page-icon" />
+            <img src={mail} alt="mail" />
             <span className="contact-page-text">Email: corporate@intabcpa.com</span>
           </div>
         </motion.div>
@@ -140,22 +146,22 @@ export default function ContactPage() {
 
             <form className="contact-page-form">
               <div className="contact-page-form-group">
-                <label className="contact-page-text contact-page-bold">Name*</label>
+                <label className="contact-page-text-form contact-page-bold">Name*</label>
                 <input type="text" placeholder="Enter your full name" className="contact-page-input contact-page-text" />
               </div>
 
               <div className="contact-page-form-group">
-                <label className="contact-page-text contact-page-bold">Email*</label>
+                <label className="contact-page-text-form contact-page-bold">Email*</label>
                 <input type="email" placeholder="Enter your email address" className="contact-page-input contact-page-text" />
               </div>
 
               <div className="contact-page-form-group">
-                <label className="contact-page-text contact-page-bold">Phone Number*</label>
+                <label className="contact-page-text-form contact-page-bold">Phone Number*</label>
                 <input type="tel" placeholder="+91 | Enter 10-digit mobile number" className="contact-page-input contact-page-text" />
               </div>
 
               <div className="contact-page-form-group">
-                <label className="contact-page-text contact-page-bold">Message*</label>
+                <label className="contact-page-text-form contact-page-bold">Message*</label>
                 <textarea 
                   placeholder="Please write your query or comment here" 
                   className="contact-page-textarea contact-page-text" 

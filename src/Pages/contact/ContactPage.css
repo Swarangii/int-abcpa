@@ -8,8 +8,8 @@
 .contact-page-container {
   /* max-width: 1200px; */
   margin: 0 80px;
-  padding: 0 16px;
-  padding-top: 32px;
+  /* padding: 0 16px; */
+  /* padding-top: 32px; */
 }
 
 @media (max-width: 768px) {
@@ -26,7 +26,14 @@
 .contact-page-bold {
   font-weight: 700;
 }
-
+.contact-page-text-form{
+color: #545454;
+font-family: Oxygen;
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: 22px; /* 157.143% */
+}
 /* Typography Specifications */
 /* H2 -> Desktop: 48px, Mobile: 38px, Weight: 700 */
 .contact-page-heading {
@@ -67,8 +74,10 @@
 .contact-page-breadcrumbs {
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: 40px;
-  color: #a0a0a0;
+  /* margin-bottom: 40px; */
+  color: #545455;
+  font-size: 9px;
+  font-weight: 400;
 }
 
 .contact-page-arrow {
@@ -124,7 +133,7 @@
 }
 
 .contact-page-info-subtitle {
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 
 .contact-page-details-list {
@@ -160,8 +169,12 @@
 }
 
 .contact-page-media-subtext {
-  font-weight: 700;
-  margin-bottom: 16px;
+  color: #545454;
+font-family: Oxygen;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 31px; /* 155% */
 }
 
 .contact-page-media-email {
@@ -202,8 +215,12 @@
 }
 
 .contact-page-form-subtext {
-  margin-bottom: 40px;
-  font-weight: 700;
+  color: #545454;
+font-family: Oxygen;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 26px; /* 130% */
 }
 
 /* Form Elements (No border-radius, no box-shadow constraints) */
@@ -229,7 +246,8 @@
 
 .contact-page-input::placeholder,
 .contact-page-textarea::placeholder {
-  color: #b0b0b0;
+  color: #545454;
+  font-weight: 400;
 }
 
 .contact-page-input:focus,
@@ -287,7 +305,8 @@
 }
 
 .contact-page-checkbox-label {
-  color: #888;
+  color: #545454;
+  font-size: 12px;
 }
 
 /* Submit Button */
