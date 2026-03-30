@@ -51,6 +51,11 @@ export default function AuditoriumPage() {
         </motion.h1>
       </div>
 
+      {/* MOBILE BREADCRUMB - Visible only on Mobile/Tablet, placed after the banner */}
+      <div className="auditorium-page-breadcrumbs-mobile">
+        HOME <span style={{"color":"#7D0B15"}}>▸</span> SPACES <span style={{"color":"#7D0B15"}}>▸</span> <span style={{"color":"#7D0B15"}}>ADITYA BIRLA THEATRE</span>
+      </div>
+
       <div className="auditorium-page-container">
         
         {/* About Section */}

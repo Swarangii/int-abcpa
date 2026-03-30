@@ -104,10 +104,47 @@
   z-index: 10;
   margin: 0 40px;
 }
+/* By default (Desktop View): Hide the mobile breadcrumb */
+.auditorium-page-breadcrumbs-mobile {
+  display: none;
+}
 
-@media (min-width: 768px) {
+/* Base styles for the mobile breadcrumb when it does appear */
+.auditorium-page-breadcrumbs-mobile {
+  color: #545454;
+font-family: Oxygen;
+font-size: 9px;
+font-style: normal;
+font-weight: 400;
+line-height: 22px; /* 244.444% */
+letter-spacing: 2.7px;
+text-transform: uppercase;
+
+}
+
+.auditorium-page-breadcrumbs-mobile span {
+ color: #7D0B15;
+font-family: Oxygen;
+font-size: 9px;
+font-style: normal;
+font-weight: 400;
+line-height: 22px; /* 244.444% */
+letter-spacing: 2.7px;
+text-transform: uppercase;
+}
+
+/* Tablet & Mobile View */
+@media screen and (max-width: 768px) {
+  
+  /* Show the mobile breadcrumb below the banner */
+  .auditorium-page-breadcrumbs-mobile {
+    display: block;
+    margin: 10px 20px;
+  }
+}
+@media (max-width: 768px) {
   .auditorium-page-breadcrumbs {
-    font-size: 9px;
+    display: none;
   }
 }
 
@@ -187,15 +224,20 @@
 
 .auditorium-page-highlights-list {
   list-style: none;
-  padding-left: 0;
+  color: #7D0B15;
+font-family: Oxygen;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 17px; /* 121.429% */
   margin-top: 24px;
 }
 
 .auditorium-page-highlights-list li {
   font-size: 14px;
   font-weight: 400;
-  color: var(--primary-text-color);
-  margin-bottom: 12px;
+    color: #7D0B15;
+  margin-bottom: 14px;
   position: relative;
   padding-left: 16px;
 }
@@ -257,10 +299,13 @@
 }
 
 .auditorium-page-structural-caption {
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--primary-text-color);
-  margin-top: 12px;
+  color: #545454;
+font-family: Oxygen;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 22px; /* 110% */
+margin: 14px 0 24px 0;
 }
 
 /* Inquire Now Form Section */
