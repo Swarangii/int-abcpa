@@ -2,42 +2,43 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Play, Image as ImageIcon } from 'lucide-react';
 import './GalleryPage.css'; // Import the specific CSS file
-
+import photo from "../../../public/gallery/img.png"
+import albumIcom from "../../../public/gallery/album.svg"
 const galleryData = [
   {
     id: 1,
     title: 'Show -Video #1 | 05 March 2026',
-    image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop',
+    image: photo,
     type: 'video',
   },
   {
     id: 2,
     title: 'INTANCPA Show Album | 05 March 2026',
-    image: 'https://images.unsplash.com/photo-1507676184212-d0330a151f15?q=80&w=800&auto=format&fit=crop',
+    image: photo,
     type: 'image',
   },
   {
     id: 3,
     title: 'Show -Video #1 | 05 March 2026',
-    image: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=800&auto=format&fit=crop',
+    image: photo,
     type: 'image',
   },
   {
     id: 4,
     title: 'INTANCPA Show Album | 05 March 2026',
-    image: 'https://images.unsplash.com/photo-1582765355150-13f5d5ccfb17?q=80&w=800&auto=format&fit=crop',
+    image: photo,
     type: 'video',
   },
   {
     id: 5,
     title: 'INTANCPA Show Album | 05 March 2026',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop',
+    image: photo,
     type: 'video',
   },
   {
     id: 6,
     title: 'Show -Video #1 | 05 March 2026',
-    image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=800&auto=format&fit=crop',
+    image: photo,
     type: 'image',
   }
 ];
@@ -152,9 +153,9 @@ export default function GalleryPage() {
                 */}
                 <div className="gallery-page-badge">
                   {item.type === 'video' ? (
-                    <Play size={18} fill="var(--primary-red-color)" stroke="var(--primary-red-color)" />
+                    <span className='playicon-gallery'>▸</span>
                   ) : (
-                    <ImageIcon size={18} color="var(--primary-red-color)" />
+                    <img src={albumIcom}></img>
                   )}
                 </div>
               </div>
