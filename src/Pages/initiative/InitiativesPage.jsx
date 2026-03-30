@@ -1,31 +1,34 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './InitiativesPage.css'; 
+// import banner from "../../../public/initiative/banner.png"
+import img1 from "../../../public/initiative/img1.png"
+import img2 from "../../../public/initiative/img2.png"
 
 const initiativesData = [
   {
     id: 1,
     title: 'Virasat: Rooted in Tradition. Resonating in Today.',
     description: "Virasat is INT Aditya Birla Centre for Performing Arts' annual tribute to India's classical legacy — a reminder that heritage is not something we inherit passively, but something we uphold with intention. Rooted in vintage sensibilities and timeless narratives...",
-    image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800&auto=format&fit=crop', // Placeholder for Virasat Poster
+    image: img1, 
   },
   {
     id: 2,
     title: 'Inter-Collegiate Drama Competition (ICDC)',
     description: "For fifty remarkable years, the Inter-Collegiate Drama Competition (ICDC) has stood at the heart of INTABCPA's commitment to nurturing the next generation of theatre-makers.",
-    image: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=800&auto=format&fit=crop', // Placeholder for Campus Poster
+    image: img2, 
   },
   {
     id: 3,
-    title: 'Chance (Talent Program) A Stage for the Brave. A Spotlight for the Unheard.',
+    title: 'Chance (Talent Program)\nA Stage for the Brave. A Spotlight for the Unheard.',
     description: "CHANCE, INTABCPA's flagship talent IP, is our commitment to that moment. A weekly platform where emerging performers step into the light with nothing but their craft, their courage, and their truth. No autotune. No filters. Just the art, as it is meant to be.",
-    image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?q=80&w=800&auto=format&fit=crop', // Placeholder for Chance Poster
+    image: img2, 
   },
   {
     id: 4,
-    title: 'Campus Ambassador Programme Where the Next Generation of Cultural Leaders Take Root',
+    title: 'Campus Ambassador Programme\nWhere the Next Generation of Cultural Leaders Take Root',
     description: "At INTABCPA, we believe that the future of the performing arts is shaped not only onstage, but also in the minds, voices, and creative instincts of young people. Our Campus Ambassador Programme is designed to nurture that future, one campus, one cohort, one cultural spark at a time.",
-    image: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=800&auto=format&fit=crop', // Placeholder for Campus Ambassador Poster
+    image: img1, 
   }
 ];
 
@@ -50,25 +53,29 @@ export default function InitiativesPage() {
       <div className="initiatives-page-hero">
         <div 
           className="initiatives-page-hero-bg"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1583855282680-6db3502ea287?q=80&w=1920&auto=format&fit=crop')" }} 
+          style={{ backgroundImage: "url('../../../public/initiative/banner.png')" }} 
         />
-        <motion.h2 
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          className="initiatives-page-hero-title"
-        >
-          INT Initiatives
-        </motion.h2>
+        
+        {/* Inner container to align title and breadcrumbs to max-width */}
+        <div className="initiatives-page-hero-inner">
+          {/* Breadcrumbs positioned on the top left of the banner */}
+          <div className="initiatives-page-breadcrumbs">
+            HOME <span className="initiatives-page-arrow">▸</span> INT INITIATIVES
+          </div>
+
+          <motion.h2 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="initiatives-page-hero-title"
+          >
+            INT Initiatives
+          </motion.h2>
+        </div>
       </div>
 
       <div className="initiatives-page-container">
         
-        {/* Breadcrumbs */}
-        <div className="initiatives-page-breadcrumbs">
-          HOME <span className="initiatives-page-arrow">▸</span> <span className="initiatives-page-current">INT INITIATIVES</span>
-        </div>
-
         {/* Initiatives Grid */}
         <motion.div 
           className="initiatives-page-grid"
