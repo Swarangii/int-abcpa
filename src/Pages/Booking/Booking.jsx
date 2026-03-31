@@ -8,7 +8,7 @@ const facilityData = [
     id: 'theatre',
     title: 'Theatre',
     description: 'An intimate space designed as an institution for the development and promotion of theatre and the performing arts.',
-    image: 'https://images.unsplash.com/photo-1507676184212-d0330a15233c?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1200&auto=format&fit=crop',
   },
   {
     id: 'classroom',

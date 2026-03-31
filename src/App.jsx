@@ -25,6 +25,8 @@ import PulsePage from "./Pages/pulsePage/PulsePage";
 import BlogPage from "./Pages/blogpage/BlogPage";
 import Leadership from "./Pages/leadership/Leadership";
 import BlogInner from "./Pages/bloginner/BlogInner";
+import Booking from "./Pages/Booking/Booking";
+import SeatSelection from "./Pages/seatings/SeatSlection";
 
 function App() {
   return (
@@ -38,7 +40,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/verify" element={<Verify />} />
       <Route path="/profile" element={<Profile />} />
-      <Route path="/bookings" element={<Bookings />} />
+      {/* <Route path="/bookings" element={<Bookings />} /> */}
       <Route path="/journey" element={<Journey />} />
       <Route path="*" element={<NotFound />} />
       <Route path="/flashback" element={<Flashback />} />
@@ -57,6 +59,8 @@ function App() {
       <Route path="/blogPage" element={<BlogPage/>} />
       <Route path="/leadership" element={<Leadership/>} />
       <Route path="/bloginner" element={<BlogInner/>} />
+      <Route path="/booking" element={<Booking/>} />
+      <Route path="seatselection" element={<SeatSelection/>} />
       </Route>
 
       {/* Pages WITHOUT Navbar + Footer */}

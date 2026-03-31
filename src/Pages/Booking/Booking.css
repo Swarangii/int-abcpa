@@ -15,9 +15,9 @@
 }
 
 .bfac-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 5%;
+  /* max-width: 1200px; */
+  margin: 0 80px;
+  /* padding: 0 5%; */
 }
 
 /* --- Header & Typography --- */
@@ -26,7 +26,7 @@
 }
 
 .bfac-breadcrumb {
-  font-size: 10px;
+  font-size: 9px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--bfac-text-light);
@@ -35,15 +35,15 @@
   align-items: center;
   gap: 8px;
 }
-
+                  
 .bfac-breadcrumb .bfac-current {
   color: var(--bfac-maroon);
   font-weight: 700;
 }
 
 .bfac-main-title {
-  font-size: 36px;
-  font-weight: 600;
+  font-size: 48px;
+  font-weight: 700;
   color: var(--bfac-text-main);
   margin: 0;
 }
@@ -82,9 +82,8 @@
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
-  border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
 }
 
 .bfac-image {
@@ -113,7 +112,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); */
   transition: all 0.3s ease;
 }
 
@@ -178,6 +177,9 @@
   }
   .bfac-title {
     font-size: 24px;
+  }
+  .bfac-container{
+    margin: 0 20px;
   }
 }
 
