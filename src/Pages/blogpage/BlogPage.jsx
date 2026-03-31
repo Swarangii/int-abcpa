@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Search } from 'lucide-react';
 import './BlogPage.css';
+import AnimatedSearch from '../../../component/searchIcon/searchIcon';
+import image from "../../../public/blog/blog.png"
 
 const blogData = [
   {
@@ -9,7 +11,7 @@ const blogData = [
     title: 'Alternative Vinyas : An Essential Book for a Rich Cultural Experience',
     author: 'Admin',
     date: 'Jun 08,2025',
-    image: 'https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=800&auto=format&fit=crop',
+    image: image ,
     isPrimary: true, // First button is solid in the design
   },
   {
@@ -17,7 +19,7 @@ const blogData = [
     title: "The word drama doesn't suit me anymore Rajendra Panchal",
     author: 'Admin',
     date: 'Jun 08,2025',
-    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop',
+    image: image,
     isPrimary: false,
   },
   {
@@ -25,7 +27,7 @@ const blogData = [
     title: 'Color Institute and Theater Training in the Corona period',
     author: 'Admin',
     date: 'Jun 08,2025',
-    image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop',
+    image: image,
     isPrimary: false,
   },
   {
@@ -33,12 +35,17 @@ const blogData = [
     title: 'Rewa City and Theater Activities',
     author: 'Admin',
     date: 'Jun 08,2025',
-    image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800&auto=format&fit=crop',
+    image: image,
     isPrimary: false,
   }
 ];
 
 export default function BlogPage() {
+  const [selectedYear, setSelectedYear] = useState('2024');
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    
+    // Available years for the dropdown
+    const years = ['2024', '2023', '2022', '2021', '2020'];
   const fadeUpVariant = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
@@ -66,19 +73,42 @@ export default function BlogPage() {
           <h2 className="blog-page-heading">Insights from the Community</h2>
           
           <div className="blog-page-controls">
-            <div className="blog-page-filter">
-              <span className="blog-page-filter-label blog-page-normal-text">YEAR</span>
-              <div className="blog-page-filter-value-box">
-                <span className="blog-page-filter-value blog-page-normal-text">2026</span>
-                <ChevronDown size={16} className="blog-page-icon" />
-              </div>
-            </div>
+             {/* Dropdown Wrapper */}
+                        <div className="pulse-page-filter-wrapper">
+                          <div 
+                            className="pulse-page-filter"
+                            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                          >
+                            <span className="pulse-page-filter-label pulse-page-normal-text">YEAR</span>
+                            <span className="pulse-page-filter-value pulse-page-normal-text">{selectedYear}</span>
+                            <ChevronDown 
+                              size={16} 
+                              className={`pulse-page-icon ${isDropdownOpen ? 'rotate' : ''}`} 
+                              style={{ transition: 'transform 0.3s ease', transform: isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                            />
+                          </div>
             
-            {/* Search Button */}
-            <button className="blog-page-search-btn">
-              <Search size={20} color="currentColor" className="blog-page-search-icon" />
-              <span className="blog-page-search-text blog-page-normal-text">SEARCH</span>
-            </button>
+                          {/* Dropdown Menu */}
+                          {isDropdownOpen && (
+                            <div className="pulse-page-dropdown-menu">
+                              {years.map((year) => (
+                                <div 
+                                  key={year}
+                                  className={`pulse-page-dropdown-item pulse-page-normal-text ${selectedYear === year ? 'active' : ''}`}
+                                  onClick={() => {
+                                    setSelectedYear(year);
+                                    setIsDropdownOpen(false);
+                                  }}
+                                >
+                                  {year}
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+            
+                     <AnimatedSearch/>
+           
           </div>
         </div>
 
