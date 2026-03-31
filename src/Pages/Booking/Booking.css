@@ -1,0 +1,226 @@
+:root {
+  --bfac-maroon: #7D0B15;
+  --bfac-text-main: #4A4A4A;
+  --bfac-text-light: #7A7A7A;
+  --bfac-bg-white: #FFFFFF;
+}
+
+.bfac-page-wrapper {
+  font-family: "Oxygen", "Segoe UI", Tahoma, sans-serif;
+  background-color: var(--bfac-bg-white);
+  color: var(--bfac-text-main);
+  padding: 40px 0 80px 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.bfac-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+/* --- Header & Typography --- */
+.bfac-header {
+  margin-bottom: 50px;
+}
+
+.bfac-breadcrumb {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--bfac-text-light);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bfac-breadcrumb .bfac-current {
+  color: var(--bfac-maroon);
+  font-weight: 700;
+}
+
+.bfac-main-title {
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--bfac-text-main);
+  margin: 0;
+}
+
+/* --- Zigzag Layout Grid --- */
+.bfac-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px; /* Space between each facility block */
+}
+
+.bfac-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.bfac-row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* --- Columns --- */
+.bfac-media-col {
+  flex: 0 0 55%; /* Image takes up 55% of the row */
+  max-width: 55%;
+}
+
+.bfac-text-col {
+  flex: 0 0 40%; /* Text takes up 40% of the row */
+  max-width: 40%;
+}
+
+/* --- Media Wrapper & Play Button --- */
+.bfac-media-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.bfac-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.bfac-media-wrapper:hover .bfac-image {
+  transform: scale(1.03);
+}
+
+.bfac-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.bfac-play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  background-color: #ffffff;
+}
+
+/* --- Text Content Styling --- */
+.bfac-text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bfac-title {
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--bfac-maroon);
+  margin: 0 0 16px 0;
+  line-height: 1.3;
+}
+
+.bfac-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--bfac-text-main);
+  margin: 0 0 24px 0;
+  max-width: 90%;
+}
+
+.bfac-book-btn {
+  background-color: var(--bfac-maroon);
+  color: var(--bfac-bg-white);
+  border: none;
+  padding: 12px 28px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.bfac-book-btn:hover {
+  background-color: #5A080F; /* Slightly darker maroon */
+  transform: translateY(-2px);
+}
+
+/* --- Responsive Breakpoints --- */
+@media (max-width: 992px) {
+  .bfac-row {
+    gap: 40px;
+  }
+  .bfac-media-col {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .bfac-text-col {
+    flex: 0 0 45%;
+    max-width: 45%;
+  }
+  .bfac-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bfac-list-container {
+    gap: 50px;
+  }
+  
+  /* Stack columns vertically on mobile */
+  .bfac-row, 
+  .bfac-row-reverse {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .bfac-media-col,
+  .bfac-text-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  /* Center text alignment for mobile */
+  .bfac-text-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .bfac-desc {
+    max-width: 100%;
+  }
+
+  .bfac-main-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bfac-play-btn {
+    width: 48px;
+    height: 48px;
+  }
+  .bfac-play-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
