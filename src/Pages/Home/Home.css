@@ -428,10 +428,12 @@ margin: 0px;
   display: flex;
   transition: transform 0.5s ease-in-out;
   transform: translateX(calc(var(--slide-index) * -50%)); 
+  gap: 40px !important;
+
 }
 
 .showtime-card {
-  padding: 0 40px;
+  /* padding: 0 40px; */
   flex: 0 0 50%;
   box-sizing: border-box;
   display: flex;
@@ -595,7 +597,7 @@ margin: 0px;
   }
   .showtime-card{
     margin: 0;
-    padding: 0px 20px;
+    /* padding: 0px 20px; */
   }
 }
 

@@ -51,7 +51,7 @@ const rowVariants = {
 // Simple reusable SVG component for the Play button
 const PlayIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M8 5V19L19 12L8 5Z" fill="#7D0B15"/>
+    <path d="M8 5V19L19 12L8 5Z" fill="#545454"/>
   </svg>
 );
 
@@ -63,7 +63,7 @@ const Booking = () => {
         {/* Header Section */}
         <div className="bfac-header">
           <nav className="bfac-breadcrumb">
-            HOME <span>&gt;</span> <span className="bfac-current">BOOKINGS</span>
+            HOME <span>▸</span> <span className="bfac-current">BOOKINGS</span>
           </nav>
           <h1 className="bfac-main-title">Booking Facilities</h1>
         </div>

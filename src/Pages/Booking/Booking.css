@@ -129,17 +129,22 @@
 }
 
 .bfac-title {
-  font-size: 28px;
-  font-weight: 500;
-  color: var(--bfac-maroon);
+  color: #7D0B15;
+font-family: Oxygen;
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: 47px; /* 117.5% */
   margin: 0 0 16px 0;
-  line-height: 1.3;
 }
 
 .bfac-desc {
-  font-size: 13px;
-  line-height: 1.6;
-  color: var(--bfac-text-main);
+  color: #545454;
+font-family: Oxygen;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
   margin: 0 0 24px 0;
   max-width: 90%;
 }
@@ -149,12 +154,17 @@
   color: var(--bfac-bg-white);
   border: none;
   padding: 12px 28px;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+padding: 10px 45px;
+justify-content: center;
+align-items: center;
+gap: 10px;
 }
 
 .bfac-book-btn:hover {
@@ -174,9 +184,6 @@
   .bfac-text-col {
     flex: 0 0 45%;
     max-width: 45%;
-  }
-  .bfac-title {
-    font-size: 24px;
   }
   .bfac-container{
     margin: 0 20px;
@@ -212,7 +219,7 @@
   }
 
   .bfac-main-title {
-    font-size: 28px;
+    font-size: 38px;
   }
 }
 
