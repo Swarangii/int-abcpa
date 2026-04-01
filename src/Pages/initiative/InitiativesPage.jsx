@@ -8,7 +8,7 @@ import img2 from "../../../public/initiative/img2.png"
 const initiativesData = [
   {
     id: 1,
-    title: 'Virasat: Rooted in Tradition. Resonating in Today.',
+    title: 'Virasat: Rooted in Tradition.\nResonating in Today.',
     description: "Virasat is INT Aditya Birla Centre for Performing Arts' annual tribute to India's classical legacy — a reminder that heritage is not something we inherit passively, but something we uphold with intention. Rooted in vintage sensibilities and timeless narratives...",
     image: img1, 
   },
@@ -84,26 +84,34 @@ export default function InitiativesPage() {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
         >
-          {initiativesData.map((item) => (
-            <motion.div key={item.id} variants={fadeUpVariant} className="initiatives-page-card">
-              
-              <div className="initiatives-page-card-image-wrapper">
-                <img 
-                  src={item.image} 
-                  alt={item.title} 
-                  className="initiatives-page-card-img"
-                />
-              </div>
-              
-              <h3 className="initiatives-page-card-title">{item.title}</h3>
-              <p className="initiatives-page-text">{item.description}</p>
-              
-              <button className="initiatives-page-btn">
-                KNOW MORE
-              </button>
-              
-            </motion.div>
-          ))}
+          {initiativesData.map((item, index) => {
+            // Logic for alternating sizes: 
+            // Index 0: Small | Index 1: Large
+            // Index 2: Large | Index 3: Small
+            const isSmallBox = index === 0 || index === 3;
+            const sizeClass = isSmallBox ? 'box-small' : 'box-large';
+
+            return (
+              <motion.div key={item.id} variants={fadeUpVariant} className="initiatives-page-card">
+                
+                <div className={`initiatives-page-card-image-wrapper ${sizeClass}`}>
+                  <img 
+                    src={item.image} 
+                    alt={item.title} 
+                    className="initiatives-page-card-img"
+                  />
+                </div>
+                
+                <h3 className="initiatives-page-card-title">{item.title}</h3>
+                <p className="initiatives-page-text">{item.description}</p>
+                
+                <button className="initiatives-page-btn">
+                  KNOW MORE
+                </button>
+                
+              </motion.div>
+            )
+          })}
         </motion.div>
 
       </div>

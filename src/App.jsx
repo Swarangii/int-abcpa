@@ -27,6 +27,7 @@ import Leadership from "./Pages/leadership/Leadership";
 import BlogInner from "./Pages/bloginner/BlogInner";
 import Booking from "./Pages/Booking/Booking";
 import SeatSelection from "./Pages/seatings/SeatSlection";
+import CheckoutPage from "./Pages/Checkout/Checkout";
 
 function App() {
   return (
@@ -60,7 +61,8 @@ function App() {
       <Route path="/leadership" element={<Leadership/>} />
       <Route path="/bloginner" element={<BlogInner/>} />
       <Route path="/booking" element={<Booking/>} />
-      <Route path="seatselection" element={<SeatSelection/>} />
+      <Route path="/seatselection" element={<SeatSelection/>} />
+      <Route path="/checkout" element={<CheckoutPage/>} />
       </Route>
 
       {/* Pages WITHOUT Navbar + Footer */}

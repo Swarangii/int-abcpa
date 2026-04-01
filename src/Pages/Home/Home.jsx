@@ -357,7 +357,7 @@ const [activeSpaceTab, setActiveSpaceTab] = useState('Stage');
       </div>
 
       <section className="home-section-wrapper">
-        <div className="container">
+        <div className="">
         
           <motion.div 
             className="profile-container"
@@ -498,7 +498,7 @@ const [activeSpaceTab, setActiveSpaceTab] = useState('Stage');
       </section>
 {/* 4. PERFORMANCE SPACES SECTION */}
       <section className="ps-section">
-        <div className="container">
+        <div className="">
           <motion.div 
           className="ps-header-row"
           initial={{ opacity: 0, y: -20 }}
@@ -623,7 +623,7 @@ const [activeSpaceTab, setActiveSpaceTab] = useState('Stage');
 
       {/* 6. CULINARY EXPERIENCE SECTION */}
       <section className="ce-section">
-      <div className="container">
+      <div className="">
         <motion.h2 
           className="ce-main-title"
           initial="hidden"
@@ -661,7 +661,7 @@ const [activeSpaceTab, setActiveSpaceTab] = useState('Stage');
 
       {/* 7. AMENITIES / FACILITIES SECTION */}
       <section className="amenity-section">
-      <div className="container">
+      <div className="amenity-section-container">
         
         {isTablet ? (
           /* --- MOBILE VIEW: CAROUSEL --- */
@@ -758,7 +758,7 @@ const [activeSpaceTab, setActiveSpaceTab] = useState('Stage');
 
       {/* 8. PULSE & PAGE SECTION */}
       <section className="pulse-section">
-        <div className="container">
+        <div className="">
           <motion.h2 
             className="pulse-main-title"
             initial="hidden"

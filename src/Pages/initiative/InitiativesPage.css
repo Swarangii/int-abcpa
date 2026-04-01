@@ -6,10 +6,7 @@
 }
 
 .initiatives-page-container {
-  /* max-width: 1200px; */
   margin: 0 80px;
-  /* padding: 0 16px;
-  padding-top: 64px; Added spacing between banner and grid */
 }
 
 @media (min-width: 768px) {
@@ -49,10 +46,8 @@
 .initiatives-page-hero-inner {
   position: relative;
   z-index: 10;
-  /* max-width: 1200px; */
   margin: 0 80px;
   height: 100%;
-  /* padding: 0 16px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,7 +59,7 @@
   }
 }
 
-/* Breadcrumbs (Positioned Top Left on Banner) */
+/* Breadcrumbs */
 .initiatives-page-breadcrumbs {
   position: absolute;
   top: 24px;
@@ -73,7 +68,7 @@
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: #ffffff; /* White text for contrast on banner */
+  color: #ffffff;
 }
 
 @media (min-width: 768px) {
@@ -104,7 +99,7 @@
   }
 }
 
-/* Grid Layout (Exact Responsive Structure) */
+/* Grid Layout */
 .initiatives-page-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -114,7 +109,7 @@
 @media (min-width: 768px) {
   .initiatives-page-grid {
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 120px; /* Wide gap matching design */
+    column-gap: 120px;
     row-gap: 80px;
   }
 }
@@ -127,21 +122,38 @@
   width: 100%;
 }
 
-/* Light Pinkish Box */
+/* Light Pinkish Box - Restored background and flex centering */
 .initiatives-page-card-image-wrapper {
-  width: 100%; /* Spans full width of the grid column */
-  background-color: #F8F3F3; /* Exact tint matching the design */
+  width: 100%; 
+  background-color: #F6EFEF; /* Matches the subtle pinkish tint from your screenshot */
   padding: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 420px; /* Fixed height for uniform presentation */
+}
+
+/* Alternating Height Classes */
+.box-small {
+  height: 320px; 
+  max-width: 474px;
+}
+
+.box-large {
+  height: 480px;
+  max-width: 640px;
+}
+
+/* Ensure mobile looks good */
+@media (max-width: 767px) {
+  .box-small, .box-large {
+    height: 350px; /* Uniform height on mobile so it doesn't look broken when stacked */
+  }
 }
 
 .initiatives-page-card-img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain;
+  object-fit: contain; /* Keeps the poster aspect ratio intact without cropping */
   box-shadow: none;
 }
 
@@ -153,7 +165,7 @@
   margin-top: 32px;
   margin-bottom: 16px;
   line-height: 1.4;
-  white-space: pre-line; /* Allows \n to act as line breaks if needed */
+  white-space: pre-line; 
 }
 
 .initiatives-page-text {
@@ -166,7 +178,7 @@
 
 /* Buttons */
 .initiatives-page-btn {
-  background-color: #7D0B15; /* Replaced variable with exact fallback */
+  background-color: #7D0B15;
   color: #ffffff;
   font-size: 13px;
   font-weight: 600;
