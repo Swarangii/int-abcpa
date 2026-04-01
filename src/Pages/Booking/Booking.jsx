@@ -63,7 +63,7 @@ const Booking = () => {
         {/* Header Section */}
         <div className="bfac-header">
           <nav className="bfac-breadcrumb">
-            HOME <span>▸</span> <span className="bfac-current">BOOKINGS</span>
+            HOME <span style={{"color":"#7D0B15"}}>▸</span> <span className="bfac-current">BOOKINGS</span>
           </nav>
           <h1 className="bfac-main-title">Booking Facilities</h1>
         </div>

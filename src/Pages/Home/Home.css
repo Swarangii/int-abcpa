@@ -987,7 +987,7 @@ aspect-ratio: 20/13;
   grid-template-columns: repeat(5, 1fr);
   gap: 11px;
   /* max-width: 1200px; */
-  margin: 0 80px;
+  /* margin: 0 80px; */
 }
 
 .amenity-card {
