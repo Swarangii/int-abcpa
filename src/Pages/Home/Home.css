@@ -421,20 +421,25 @@ margin: 0px;
 .showtime-carousel-wrapper {
   margin: 0 auto;
   overflow: hidden;
-  padding: 10px 30px;
+  /* padding: 10px 30px; */
+  justify-content: space-between;
+  /* display: flex; */
+  display: block;
 }
 
 .showtime-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  transform: translateX(calc(var(--slide-index) * -50%)); 
-  gap: 40px !important;
+  /* transform: translateX(calc(var(--slide-index) * -50%));  */
+  /* gap: 40px !important; */
 
 }
 
 .showtime-card {
+  padding: 0 30px ;
   /* padding: 0 40px; */
-  flex: 0 0 50%;
+  /* flex: 0 0 50%; */
+  flex: 1;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

@@ -235,6 +235,7 @@ const tabTextVariants = { hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, 
 const tabImageVariants = { hidden: { opacity: 0, scale: 0.95, x: 20 }, visible: { opacity: 1, scale: 1, x: 0, transition: { duration: 0.6, ease: "easeOut", delay: 0.1 } }, exit: { opacity: 0, scale: 0.95, x: -20, transition: { duration: 0.3, ease: "easeIn" } } };
 
 const Home = () => {
+ 
     const [currentIndex, setCurrentIndex] = useState(0);
   const [currentShowtimeIndex, setCurrentShowtimeIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
@@ -252,6 +253,11 @@ const [activeSpaceTab, setActiveSpaceTab] = useState('Stage');
       setPulseIndex(0); 
     }
   };
+
+   const cardsPerView = isTablet ? 1 : 2;
+  const trackWidth = `${(showtimeData.length / cardsPerView) * 100}%`;
+// This ensures one click moves exactly one item's width
+const slidePercentage = 100 / showtimeData.length;
 
   const prevPulse = () => {
     if (pulseIndex > 0) {
@@ -421,7 +427,7 @@ const [activeSpaceTab, setActiveSpaceTab] = useState('Stage');
       </section>
     {/* 2. NEW SHOWTIME SECTION */}
       <section className="showtime-section">
-        <motion.h2 
+        {/* <motion.h2 
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -444,12 +450,10 @@ const [activeSpaceTab, setActiveSpaceTab] = useState('Stage');
               viewport={{ once: true, amount: 0.2 }}
               variants={staggerContainer}
             >
-              {/* Image revealing from LEFT */}
               <motion.div className="showtime-img-wrapper" variants={revealFromLeft}>
                  <img src={item.image} alt={item.title} className="showtime-img" />
               </motion.div>
 
-              {/* Info revealing from RIGHT */}
               <motion.div className="showtime-info" variants={revealFromLeft}>
                 <h3 className="showtime-title">{item.title}</h3>
                 <p className="showtime-desc">{item.description}</p>
@@ -465,7 +469,50 @@ const [activeSpaceTab, setActiveSpaceTab] = useState('Stage');
             </motion.div>
             ))}
           </div>
-        </div>
+        </div> */}
+        <motion.h2 
+    initial={{ opacity: 0, y: -20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    className="showtime-main-title"
+  >
+    Showtime
+  </motion.h2>
+  
+  <div className="showtime-carousel-wrapper">
+    <div 
+      className="showtime-track" 
+      style={{ 
+        width: trackWidth,
+        transform: `translateX(-${currentShowtimeIndex * slidePercentage}%)`
+      }}
+    >
+      {showtimeData.map((item) => (
+        <motion.div 
+          className="showtime-card" 
+          key={item.id}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={staggerContainer}
+        >
+          {/* Your existing Image and Info code stays exactly the same */}
+          <motion.div className="showtime-img-wrapper" variants={revealFromLeft}>
+             <img src={item.image} alt={item.title} className="showtime-img" />
+          </motion.div>
+
+          <motion.div className="showtime-info" variants={revealFromLeft}>
+            <h3 className="showtime-title">{item.title}</h3>
+            <p className="showtime-desc">{item.description}</p>
+            <div className="showtime-buttons">
+              <motion.button className="showtime-btn-outline">MORE INFO</motion.button>
+              <motion.button className="showtime-btn-solid">BOOK NOW</motion.button>
+            </div>
+          </motion.div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
 
         {/* Controls */}
         {/* Controls */}
